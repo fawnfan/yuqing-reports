@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《鸣潮》近期舆情监测简报 - 2026年4月17日</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(244,114,182,0.16), transparent 28%),
+        radial-gradient(circle at top left, rgba(59,130,246,0.16), transparent 24%),
+        linear-gradient(135deg, #070b17 0%, #0f172a 46%, #111827 100%);
+      color: #e5eefc;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .container { max-width: 1120px; margin: 0 auto; }
+    .header {
+      padding: 28px 30px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(17,24,39,0.88), rgba(15,23,42,0.72));
+      box-shadow: 0 18px 60px rgba(0,0,0,0.32);
+      margin-bottom: 24px;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 12px; border-radius: 999px; font-size: 12px;
+      color: #f9a8d4; background: rgba(236,72,153,0.12);
+      border: 1px solid rgba(236,72,153,0.25); margin-bottom: 14px;
+    }
+    .header h1 {
+      font-size: 34px; line-height: 1.2; margin-bottom: 10px;
+      background: linear-gradient(90deg, #93c5fd, #c4b5fd 52%, #f9a8d4);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .header-subtitle { color: #cbd5e1; line-height: 1.8; font-size: 15px; max-width: 920px; }
+    .header-meta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 18px; }
+    .meta-chip {
+      padding: 8px 12px; border-radius: 12px; background: rgba(30,41,59,0.86);
+      border: 1px solid rgba(148,163,184,0.18); color: #cbd5e1; font-size: 13px;
+    }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .stat-card, .summary-card, .source-card {
+      border-radius: 20px; border: 1px solid rgba(148,163,184,0.16);
+      background: rgba(15,23,42,0.84); box-shadow: 0 16px 40px rgba(0,0,0,0.24);
+    }
+    .stat-card { padding: 20px; }
+    .stat-title { color: #94a3b8; font-size: 13px; margin-bottom: 8px; }
+    .stat-value { font-size: 30px; font-weight: 700; color: #f8fafc; }
+    .stat-note { margin-top: 8px; color: #a5b4fc; font-size: 12px; }
+    .overview-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; margin-bottom: 24px; }
+    .summary-card { padding: 22px; }
+    .card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+    .card-head h2 { font-size: 18px; color: #f8fafc; }
+    .small-badge {
+      padding: 4px 10px; border-radius: 999px; font-size: 12px;
+      color: #c4b5fd; background: rgba(99,102,241,0.14); border: 1px solid rgba(99,102,241,0.24);
+    }
+    .summary-list { display: grid; gap: 12px; }
+    .summary-item {
+      padding: 14px 16px; border-radius: 14px;
+      background: rgba(30,41,59,0.72); border: 1px solid rgba(148,163,184,0.12);
+    }
+    .summary-item strong { display: block; margin-bottom: 6px; color: #f8fafc; font-size: 14px; }
+    .summary-item span { color: #cbd5e1; font-size: 14px; line-height: 1.7; }
+    .tag-cluster { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+    .tag {
+      display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px;
+      border-radius: 999px; font-size: 13px; color: #e9d5ff;
+      background: linear-gradient(135deg, rgba(59,130,246,0.16), rgba(168,85,247,0.16));
+      border: 1px solid rgba(168,85,247,0.24);
+    }
+    .section {
+      margin-bottom: 24px; border-radius: 24px; overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.16); background: rgba(15,23,42,0.74);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.24);
+    }
+    .section-header {
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+      padding: 18px 22px; background: rgba(15,23,42,0.98);
+      border-bottom: 1px solid rgba(148,163,184,0.12);
+    }
+    .section-title { display: flex; align-items: center; gap: 12px; font-size: 20px; font-weight: 700; }
+    .section-sub { color: #94a3b8; font-size: 13px; }
+    .section-body { padding: 18px; display: grid; gap: 14px; }
+    .item {
+      border-radius: 18px; padding: 18px; background: rgba(30,41,59,0.78);
+      border-left: 4px solid transparent; border: 1px solid rgba(148,163,184,0.12);
+    }
+    .item.positive { border-left-color: #22c55e; }
+    .item.neutral { border-left-color: #38bdf8; }
+    .item.negative { border-left-color: #ef4444; }
+    .item-title { font-size: 17px; line-height: 1.5; color: #f8fafc; margin-bottom: 10px; font-weight: 700; }
+    .item-desc { font-size: 14px; line-height: 1.85; color: #d7e2f0; margin-bottom: 14px; }
+    .item-meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px;
+      border-radius: 999px; background: rgba(51,65,85,0.9);
+      border: 1px solid rgba(148,163,184,0.14); color: #cbd5e1; font-size: 12px;
+    }
+    .heat-p0 { color: #fecaca; background: rgba(127,29,29,0.55); border-color: rgba(248,113,113,0.28); }
+    .heat-p1 { color: #fed7aa; background: rgba(124,45,18,0.55); border-color: rgba(251,146,60,0.28); }
+    .heat-p2 { color: #fde68a; background: rgba(113,63,18,0.55); border-color: rgba(250,204,21,0.28); }
+    .mood-positive { color: #bbf7d0; }
+    .mood-neutral { color: #bae6fd; }
+    .mood-negative { color: #fecaca; }
+    .source-card { padding: 22px; margin-bottom: 24px; }
+    .source-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 14px; }
+    .source-item {
+      padding: 14px 16px; border-radius: 14px;
+      background: rgba(30,41,59,0.72); border: 1px solid rgba(148,163,184,0.12);
+    }
+    .source-item a { color: #93c5fd; text-decoration: none; word-break: break-all; }
+    .source-item a:hover { text-decoration: underline; }
+    .source-item-title { font-size: 14px; color: #f8fafc; margin-bottom: 6px; line-height: 1.6; font-weight: 600; }
+    .source-item-meta { color: #94a3b8; font-size: 12px; margin-bottom: 8px; line-height: 1.6; }
+    .footer-note { color: #94a3b8; font-size: 12px; line-height: 1.8; margin-top: 14px; }
+    .platform-section {
+      margin-bottom: 24px; border-radius: 24px; overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.16); background: rgba(15,23,42,0.74);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.24); padding: 22px;
+    }
+    .platform-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 16px; }
+    .platform-card {
+      padding: 16px; border-radius: 16px;
+      background: rgba(30,41,59,0.72); border: 1px solid rgba(148,163,184,0.12);
+    }
+    .platform-card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .platform-icon {
+      width: 28px; height: 28px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 700; color: #fff;
+    }
+    .platform-name { font-size: 15px; font-weight: 700; color: #f8fafc; }
+    .platform-type {
+      font-size: 11px; color: #94a3b8; padding: 2px 8px;
+      border-radius: 999px; background: rgba(51,65,85,0.6); margin-left: auto;
+    }
+    .platform-desc { font-size: 13px; color: #cbd5e1; line-height: 1.7; }
+    .heat-indicator { display: inline-flex; align-items: center; gap: 4px; margin-top: 8px; font-size: 12px; color: #a5b4fc; }
+    .heat-dot { width: 6px; height: 6px; border-radius: 50%; background: #a5b4fc; }
+    .heat-dot.high { background: #f87171; }
+    .heat-dot.mid { background: #fb923c; }
+    .heat-dot.low { background: #fbbf24; }
+    .source-link-btn {
+      display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px;
+      border-radius: 10px; font-size: 12px; color: #93c5fd;
+      background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.25);
+      text-decoration: none; transition: all 0.2s; margin-top: 10px;
+    }
+    .source-link-btn:hover {
+      background: rgba(59,130,246,0.2); border-color: rgba(59,130,246,0.45);
+      color: #bfdbfe; text-decoration: none;
+    }
+    .source-link-btn::before { content: "🔗"; }
+    .evidence-tag {
+      display: inline-flex; align-items: center; gap: 4px; font-size: 11px;
+      font-weight: 600; padding: 3px 10px; border-radius: 999px;
+      letter-spacing: 0.03em; white-space: nowrap; vertical-align: middle; margin-left: 8px;
+    }
+    .evidence-direct { background: rgba(34,197,94,0.15); border: 1px solid rgba(34,197,94,0.35); color: #4ade80; }
+    .evidence-indirect { background: rgba(251,191,36,0.13); border: 1px solid rgba(251,191,36,0.32); color: #fbbf24; }
+    @media (max-width: 900px) {
+      .grid-4, .overview-grid, .source-grid, .platform-grid { grid-template-columns: 1fr; }
+      .header h1 { font-size: 28px; }
+      body { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="eyebrow">🎯 鸣潮近期舆情监测 · 近两周视角 · 正式版V5</div>
+      <h1>《鸣潮》近期舆情、游戏资讯与大事件简报</h1>
+      <p class="header-subtitle">
+        本页聚焦 <strong>2026 年 4 月 1 日至 2026 年 4 月 17 日</strong> 的公开信息，核心围绕 <strong>3.2 版本下半运营期 → 3.3 周年庆前瞻倒计时</strong>：<strong style="color:#fbbf24;">3.3 周年庆前瞻直播今日（4/17）19:00 正式播出</strong>、绯雪建模紧急重做风评彻底反转、3.2 下半复刻卡池首日流水仅排第76创新低、2月手游营收2.06亿环比暴涨157%、女神异闻录5R联动涂装上架、B站官方粉丝突破500万、绯雪/达妮娅测试服数据持续曝光。
+        另外，<strong>3.2下半复刻卡池流水低迷（国服76位、日服27位、Steam畅销36位）</strong>需关注；<strong>绯雪"新晋轮椅C"争议</strong>是社区讨论热点。
+        监测范围覆盖官方渠道、核心讨论社区、主流游戏资讯站与短视频/内容平台，并按 <strong>P0 / P1 / P2</strong> 标注热度。所有板块均按热度从高到低排序。<strong>每条舆情均附来源链接，可一键跳转查看原文。</strong>
+      </p>
+      <div class="header-meta">
+        <div class="meta-chip">📅 覆盖时间：2026/04/01 - 2026/04/17（近17天）</div>
+        <div class="meta-chip">🕦 生成时间：2026/04/17 01:20</div>
+        <div class="meta-chip">🎮 当前版本：3.2「于影中启明的决心」下半运营期 · 3.3 前瞻今日播出</div>
+        <div class="meta-chip">📡 监测平台（17个）：B站 / 库街区 / 小红书 / NGA / TapTap / 微博 / 抖音 / 贴吧 / 好游快爆 / 17173 / 游民星空 / 腾讯新闻 / 搜狐游戏 / 今日头条 / 企鹅号 / WeGame / 官网</div>
+      </div>
+    </header>
+
+    <section class="grid-4">
+      <div class="stat-card">
+        <div class="stat-title">总舆情条目</div>
+        <div class="stat-value">20</div>
+        <div class="stat-note">3.3前瞻直播 + 绯雪建模重做 + 复刻流水低迷 + 2月营收暴涨 + P5R联动 + B站500万 + 测试服数据</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">版本动态</div>
+        <div class="stat-value">6</div>
+        <div class="stat-note">3.2下半卡池上线、原野骑士活动、记忆中的绯影、P5R联动涂装、声骸双倍、冥歌海墟更新</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">热点舆论</div>
+        <div class="stat-value">8</div>
+        <div class="stat-note">绯雪建模反转、复刻流水低迷、绯雪轮椅C争议、周年庆福利预测、零氪抽卡规划</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">重点动向</div>
+        <div class="stat-value">6</div>
+        <div class="stat-note">3.3前瞻直播、2月营收2.06亿、B站500万、线下庆典日本幕张、3.4赛博联动持续发酵</div>
+      </div>
+    </section>
+
+    <section class="overview-grid">
+      <div class="summary-card">
+        <div class="card-head">
+          <h2>本期舆论概况</h2>
+          <span class="small-badge">Overview</span>
+        </div>
+        <div class="summary-list">
+          <div class="summary-item" style="border:1px solid rgba(250,204,21,0.3);background:linear-gradient(135deg,rgba(30,41,59,0.72),rgba(113,63,18,0.15));">
+            <strong style="color:#fde68a;">🔥 0. 3.3周年庆前瞻直播今日19:00播出——二周年最大版本即将揭晓</strong>
+            <span>《鸣潮》3.3版本"二周年庆典"前瞻通讯将于2026年4月17日19:00通过B站/YouTube/Twitch全平台同步播出。官方微博、17173、游民星空均已发布倒计时预告。届时将正式公布绯雪/达妮娅完整技能演示、周年庆活动全貌、卡池详情、角色自选复刻及惯例300星声兑换码。3.3版本4月30日上线，预计为公测以来规模最大的版本更新。</span>
+          </div>
+          <div class="summary-item">
+            <strong>1. 绯雪建模紧急重做风评彻底反转：库洛"听劝"获玩家一致认可</strong>
+            <span>绯雪初版建模因面部粗糙、身材比例失调、弓箭穿模等问题遭大量吐槽。库洛团队快速响应，对头发纹理、五官细节、肩部比例、上半身建模进行全面优化。重做后在TapTap引发"风评彻底反转"话题，B站多条对比视频播放量过万，抖音"建模直接换人"视频1.7万赞。从"不想抽"到"不得不抽"的口碑逆转，被评为行业罕见的成功案例。</span>
+          </div>
+          <div class="summary-item">
+            <strong>2. 3.2下半复刻卡池首日流水仅排第76：创近期新低，周年庆"虹吸效应"显著</strong>
+            <span>4月9日琳奈/赞妮/菲比三复刻卡池上线，首日流水国服总榜仅排76位、日服27位、韩服46位、Steam畅销榜36位，未过任何流水线。核心原因：纯复刻无新角色 + 3.3周年庆绯雪/达妮娅强势虹吸 + 玩家普遍囤星声。琳奈为唯一抽取亮点，赞妮和菲比双双遇冷。</span>
+          </div>
+          <div class="summary-item">
+            <strong>3. 2月手游营收2.06亿环比暴涨157%：爱弥斯持有率67.6%封神，春节档精准收割</strong>
+            <span>据手游测试实验室数据，鸣潮2026年2月手游端月营收达2.06亿元，环比暴涨156.8%。核心推手为爱弥斯卡池——综合持有率67.63%、六链持有率24.72%（全角色最高）、首日冲入畅销前十。对比下半场陆赫斯仅2.14%持有率、畅销30多名，角色两极分化严重。</span>
+          </div>
+          <div class="summary-item">
+            <strong>4. 女神异闻录5R联动第二弹上架 + B站官方粉丝突破500万</strong>
+            <span>4月9日P5R联动涂装礼包上架，包含Queen（蓝色）/Violet（红色）两款机车涂装+300星声，售价68元/款，限时至4/29。同期3首P5R经典曲目加入旋律档案馆。此外，鸣潮B站官方账号粉丝突破500万，官方发布爱弥斯贺图海报庆祝，社区影响力里程碑。</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <div class="card-head">
+          <h2>本期高频主题</h2>
+          <span class="small-badge">Topics</span>
+        </div>
+        <div class="tag-cluster">
+          <span class="tag" style="background:linear-gradient(135deg,rgba(250,204,21,0.24),rgba(251,146,60,0.24));border-color:rgba(250,204,21,0.4);color:#fde68a;font-weight:700;">#3.3周年庆前瞻直播今日播出 🔥</span>
+          <span class="tag">#绯雪建模重做风评反转</span>
+          <span class="tag">#3.2下半复刻流水创新低</span>
+          <span class="tag">#2月营收2.06亿暴涨157%</span>
+          <span class="tag">#绯雪"新晋轮椅C"争议</span>
+          <span class="tag">#达妮娅成黑马·爱弥斯版本赢家</span>
+          <span class="tag">#P5R联动涂装上架</span>
+          <span class="tag">#B站粉丝500万里程碑</span>
+          <span class="tag">#周年庆50-62抽免费福利</span>
+          <span class="tag">#绯雪冷凝主C·达妮娅热熔副C</span>
+          <span class="tag">#莫宁复刻+双马尾新皮肤</span>
+          <span class="tag">#弗洛洛返场复刻</span>
+          <span class="tag">#记忆中的绯影预热活动</span>
+          <span class="tag" style="color:#fed7aa;background:rgba(124,45,18,0.3);border-color:rgba(251,146,60,0.35);">#琳奈独撑场面·赞妮菲比双遇冷</span>
+          <span class="tag">#线下庆典5/30日本幕张</span>
+          <span class="tag">#零氪玩家攒星声攻略</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 版本动态 ==================== -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <div class="section-title">🔄 版本动态</div>
+          <div class="section-sub">聚焦当前版本运行状态与已落地内容 · 按热度 P0→P2 排序</div>
+        </div>
+        <div class="pill">6 条</div>
+      </div>
+      <div class="section-body">
+        <article class="item neutral">
+          <div class="item-title">3.2下半卡池4/9上线：琳奈/赞妮/菲比三复刻首日流水仅排76位，"周年庆虹吸"效应验证 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">4月9日3.2下半卡池正式开启，复刻角色琳奈、赞妮、菲比同时上线，持续至4月29日。TapTap动态"鸣潮3.2下半复刻首日流水仅排76"获235浏览热议。首日数据：国服总榜第76位、日服第27位、韩服第46位、Steam畅销榜第36位，未过任何流水线。琳奈因可与绯雪组队（叠满霜渐效应）成为唯一抽取亮点，赞妮和菲比双双爆冷。多平台攻略一致建议"优先琳奈，其余跳过存3.3"。知乎相关问题"3.2下半卡池对新手值不值"热度持续，什么值得买、九游、游侠网均发布抽卡指南。</div>
+          <div class="item-meta">
+            <span class="pill">来源：TapTap / 抖音 / 17173 / 知乎 / 什么值得买 / 九游</span>
+            <span class="pill">重点讨论：TapTap / B站 / NGA / 抖音 / 贴吧</span>
+            <span class="pill heat-p0">热度：P0</span>
+            <span class="pill mood-neutral">情绪：中性·流水承压</span>
+          </div>
+          <a class="source-link-btn" href="https://www.taptap.cn/moment/791777419064246810" target="_blank" rel="noopener noreferrer">查看来源：TapTap「3.2下半复刻首日流水仅排76」</a>
+        </article>
+
+        <article class="item positive">
+          <div class="item-title">原野骑士限时挑战4/9上线（600星声）+ 4月活动日历完整呈现 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">4月大事件日历完整呈现：①餐能中心补完计划（4/2-4/20，400星声）②原野骑士限时挑战（4/9起，600星声）③冥歌海墟周期更新（4/13，800星声）④记忆中的绯影预热活动（4/16-4/29，280星声）⑤声骸双倍（4/22-4/29）⑥逆境深塔更新（4/27）。不含常规奖励，仅活动星声合计约2,080+。17173、九游、星游等平台均发布完整日历攻略。</div>
+          <div class="item-meta">
+            <span class="pill">来源：17173 / 九游 / 星游 / 搜狐</span>
+            <span class="pill">重点讨论：库街区 / B站 / TapTap / 好游快爆</span>
+            <span class="pill heat-p1">热度：P1</span>
+            <span class="pill mood-positive">情绪：正面参考</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/04052026/031033556.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「鸣潮4月大事件一览」</a>
+        </article>
+
+        <article class="item positive">
+          <div class="item-title">「记忆中的绯影」预热活动4/16上线：绯雪前置剧情 + 前瞻直播前最后高潮（280星声） <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">4月16日"记忆中的绯影"预热活动正式开启，持续至4月29日。活动文案揭示："黑海岸执花桔梗来到了星炬学院，她听闻这里存在一个幽灵巫女的传说"——直接暗示绯雪的背景故事。该活动作为3.3周年庆前最后的大型预热事件，与4月17日的前瞻直播形成"预热→引爆"组合拳。完成可获280星声。</div>
+          <div class="item-meta">
+            <span class="pill">来源：鸣潮官网 / 17173 / B站</span>
+            <span class="pill">重点讨论：库街区 / B站 / TapTap / NGA</span>
+            <span class="pill heat-p1">热度：P1</span>
+            <span class="pill mood-positive">情绪：正面期待</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/04152026/170635806.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「280星声活动！3.3周年庆绯雪预热」</a>
+        </article>
+
+        <article class="item positive">
+          <div class="item-title">女神异闻录5R联动第二弹涂装上架：Queen+Violet机车涂装68元/款 + 300星声 + 3首经典BGM <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">4月9日3.2下半版本更新后，商城上架P5R联动涂装礼包第二弹。Queen（蓝色/新岛真主题）和Violet（红色/芳泽霞主题）两款机车涂装各含前后零件+挡泥板定制+300星声。国际版售价9.99美元，国服约68元/款，限时至4月29日结束。同步上线3首P5R经典曲目（可在旋律档案馆+心灵电台收听）。全平台支持（PS5/PC/移动端），Xbox版预计7月上线。继3.0首波P5R+P3R+索尼克联动后的延续内容。</div>
+          <div class="item-meta">
+            <span class="pill">来源：GamePlusDaily / 17173 / 游民星空</span>
+            <span class="pill">重点讨论：B站 / TapTap / 小红书 / 库街区</span>
+            <span class="pill heat-p1">热度：P1</span>
+            <span class="pill mood-positive">情绪：正面好评</span>
+          </div>
+          <a class="source-link-btn" href="https://gameplusdaily.com/news/wuthering-waves-persona-5-collab" target="_blank" rel="noopener noreferrer">查看来源：GamePlusDaily「鸣潮×P5R联动详情」</a>
+        </article>
+
+        <article class="item positive">
+          <div class="item-title">3.3绯雪/达妮娅突破材料一图流曝光：除新周本外基本确定，备战囤材料 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">17173于4月7日发布绯雪和达妮娅等级突破材料一图流。由于3.3版本将新增周本，周本材料需等前瞻直播正式确认，但其余突破材料已基本确定。文章建议想抽绯雪/达妮娅的玩家提前预刷材料备战。同时确认3.2下半活动奖励合计仅880星声（原野骑士600+记忆中的绯影280），福利偏少，进一步强化"存星声等3.3"的社区共识。</div>
+          <div class="item-meta">
+            <span class="pill">来源：17173 / B站 / TapTap</span>
+            <span class="pill">重点讨论：库街区 / B站 / 贴吧 / NGA</span>
+            <span class="pill heat-p2">热度：P2</span>
+            <span class="pill mood-positive">情绪：正面参考</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/04072026/163508498.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「3.3绯雪/达妮娅材料一图流」</a>
+        </article>
+
+        <article class="item positive">
+          <div class="item-title">冥歌海墟周期更新4/13 + 逆境深塔4/27更新预告 <span class="evidence-tag evidence-indirect">⚡ 间接引用</span></div>
+          <div class="item-desc">4月13日冥歌海墟完成周期更新，完成全部内容可获800星声。逆境深塔将于4月27日进行新一期更新，17173提及"水温稍有上涨，弗洛洛暗队再次被针对"。这两项常驻高难玩法在3.2过渡版本中承担了维持硬核玩家活跃的关键职能。</div>
+          <div class="item-meta">
+            <span class="pill">来源：17173 / 鸣潮官网</span>
+            <span class="pill">重点讨论：NGA / 库街区 / B站</span>
+            <span class="pill heat-p2">热度：P2</span>
+            <span class="pill mood-positive">情绪：正面常规</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/04052026/031033556.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「4月大事件·海墟&深塔」</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 热点舆论 ==================== -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <div class="section-title">💬 热点舆论</div>
+          <div class="section-sub">聚焦角色建模争议、流水数据、营收表现、社区讨论焦点 · 按热度 P0→P2 排序</div>
+        </div>
+        <div class="pill">8 条</div>
+      </div>
+      <div class="section-body">
+        <article class="item positive">
+          <div class="item-title">🔥 绯雪建模紧急重做：头发五官身材全面优化，社区口碑从"翻车"到"封神"彻底反转 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">3.3新角色绯雪经历了罕见的建模重做事件。初版PV和IGN实机演示暴露出建模粗糙（脸型偏长）、身材比例失调（肩部空荡）、弓箭穿模三大问题，遭TapTap、贴吧、B站大量吐槽。库洛团队快速响应，在测试服对绯雪进行全面优化：头发纹理更自然飘逸、五官细节清晰可见、肩部比例协调、上半身建模从"平平无奇"变"非常有料"。TapTap多条"风评彻底反转"帖获数百浏览，抖音"绯雪实机建模直接换人"视频1.7万赞，贴吧3.3测试服优化对比图帖热度极高。从"不想抽"到"不得不抽"的口碑逆转，被评为游戏行业"听取玩家意见成功扭转角色形象"的典范案例。</div>
+          <div class="item-meta">
+            <span class="pill">来源：TapTap / B站 / 抖音 / 贴吧 / 17173 / 网易</span>
+            <span class="pill">重点讨论：TapTap / B站 / 贴吧 / 抖音 / NGA / 小红书 / 库街区</span>
+            <span class="pill heat-p0">热度：P0</span>
+            <span class="pill mood-positive">情绪：正面·口碑反转</span>
+          </div>
+          <a class="source-link-btn" href="https://www.taptap.cn/moment/792135730045388901" target="_blank" rel="noopener noreferrer">查看来源：TapTap「绯雪建模大改成功·风评彻底反转」</a>
+        </article>
+
+        <article class="item neutral">
+          <div class="item-title">🔥 3.2下半复刻卡池流水数据全面出炉：国服76、日服27、Steam36，"抽新不抽旧"共识验证 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">TapTap和抖音多位数据博主公布了3.2下半复刻卡池首日流水：国服总榜76位、日服27位、韩服46位、Steam畅销36位，全线未过任何流水基准线，创下近期卡池新低。分析指出三大原因：①纯复刻无新角色，玩家本就预期不高；②3.3周年庆绯雪+达妮娅+累抽活动的强势虹吸；③"抽新不抽旧"已成玩家群体普遍共识。琳奈因可配合绯雪组队而独撑场面，赞妮和菲比彻底爆冷。该数据进一步印证周年庆大版本前复刻卡池的"窗口期低谷"规律。</div>
+          <div class="item-meta">
+            <span class="pill">来源：TapTap / 抖音 / B站</span>
+            <span class="pill">重点讨论：TapTap / NGA / B站 / 贴吧 / 抖音</span>
+            <span class="pill heat-p0">热度：P0</span>
+            <span class="pill mood-neutral">情绪：中性·数据分析</span>
+          </div>
+          <a class="source-link-btn" href="https://www.taptap.cn/moment/791777419064246810" target="_blank" rel="noopener noreferrer">查看来源：TapTap「复刻首日流水仅排76」</a>
+        </article>
+
+        <article class="item positive">
+          <div class="item-title">🔥 2月手游营收2.06亿环比暴涨157%：爱弥斯"流水收割机"+春节档精准布局 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">手游测试实验室3月3日发布《鸣潮2月流水数据复盘》：2月手游端月营收2.06亿元，突破2亿大关，环比暴涨156.8%。核心推手为爱弥斯卡池：综合持有率67.63%（超越今汐）、六链持有率24.72%（全角色最高）、卡池首日冲入畅销前十。"强度和XP同时拉满"是其高持有率的核心原因。对比下半场陆赫斯仅2.14%持有率、畅销30多名的断层表现，角色两极分化严重。文章总结："鸣潮流水暴涨本质上是高粘性玩家对高质量角色的真香反馈，库洛在运营节奏和卡池策略上日趋成熟。"</div>
+          <div class="item-meta">
+            <span class="pill">来源：手游测试实验室（mobilegametest.com）</span>
+            <span class="pill">重点讨论：NGA / B站 / 知乎 / TapTap</span>
+            <span class="pill heat-p0">热度：P0</span>
+            <span class="pill mood-positive">情绪：正面·数据亮眼</span>
+          </div>
+          <a class="source-link-btn" href="https://mobilegametest.com/news/wuthering-waves-february-revenue-report" target="_blank" rel="noopener noreferrer">查看来源：手游测试实验室「2月流水2.06亿复盘」</a>
+        </article>
+
+        <article class="item neutral">
+          <div class="item-title">绯雪"新晋轮椅C"争议：测试服数据引发强度讨论，达妮娅反成黑马 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">17173于4月14日发文"鸣潮3.3绯雪新晋轮椅C！达妮娅成黑马"，引发社区激烈讨论。测试服V2版本数据显示绯雪单人输出表现不及预期，部分玩家担忧其"轮椅"（弱势角色）定位。但也有理论党指出测试服数据仍在调整中，不应过早定论。与此同时，达妮娅因"快速协奏+牵引聚怪+增伤"机制被评为"黑马"，爱弥斯则因达妮娅专属配合被称为"版本赢家"。贴吧强度吧V2绯雪单人数据帖引发深度数值讨论。周年庆送20抽福利的消息同步传播。</div>
+          <div class="item-meta">
+            <span class="pill">来源：17173 / 贴吧 / B站 / TapTap</span>
+            <span class="pill">重点讨论：NGA / 贴吧 / B站 / TapTap / 库街区</span>
+            <span class="pill heat-p1">热度：P1</span>
+            <span class="pill mood-neutral">情绪：中性·强度争议</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/04142026/170628510.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「绯雪新晋轮椅C！达妮娅成黑马」</a>
+        </article>
+
+        <article class="item positive">
+          <div class="item-title">周年庆零氪玩家福利预测：50-62抽免费星声 + 登录奖励 + 累充活动引爆囤卡热潮 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">BitTopup于4月13日发布深度文章《鸣潮2026年二周年庆3.3版本完全指南》，系统梳理了零氪玩家的免费星声来源：周年庆专属（登录奖励1,600-2,400+开发者邮件~1,600+活动任务+礼包码）合计5,000-6,400星声；加上每日任务、逆境深塔、探索等常规来源可达8,000-10,000+，折合约50-62抽。微氪月卡党可达90-130+抽。百度发文确认"累充活动将在4月17日前瞻录播后正式开启"。社区零氪攻略帖高频出现，强调"每日签到不可断+礼包码24小时内兑换+海墟必清"。</div>
+          <div class="item-meta">
+            <span class="pill">来源：BitTopup / 百度 / TapTap / B站</span>
+            <span class="pill">重点讨论：B站 / NGA / 库街区 / TapTap / 小红书</span>
+            <span class="pill heat-p1">热度：P1</span>
+            <span class="pill mood-positive">情绪：正面·福利期待</span>
+          </div>
+          <a class="source-link-btn" href="https://bittopup.com/zh/article/Wuthering-Waves-2nd-Anniversary-2026-Ver-33-Events-Free-Astrite-Pulls-Guide" target="_blank" rel="noopener noreferrer">查看来源：BitTopup「二周年庆完全指南」</a>
+        </article>
+
+        <article class="item positive">
+          <div class="item-title">绯雪/达妮娅双形态设计持续讨论：实机演示"帅到炸裂"，配队规划成社区焦点 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">4月初IGN发布绯雪/达妮娅战斗实机演示后，两位角色的双形态设计引发持续讨论。绯雪常态太刀+二形态弓箭（冰霜特效）、达妮娅音感仪+武器确定为热熔属性。17173（4/6）确认"双角色二形态可常驻"，配队伤害数据同步出炉。什么值得买发布"3.3周年庆绯雪与达妮娅抽取建议及配队规划"，明确建议"绯雪>达妮娅"的抽取优先级（冷凝主C稀缺，直接提升阵容上限）。达妮娅作为爱弥斯专属队友的定位使其价值依附于爱弥斯持有情况。</div>
+          <div class="item-meta">
+            <span class="pill">来源：17173 / 什么值得买 / 搜狐 / MSN / TapTap</span>
+            <span class="pill">重点讨论：B站 / NGA / 库街区 / 小红书 / TapTap</span>
+            <span class="pill heat-p1">热度：P1</span>
+            <span class="pill mood-positive">情绪：正面兴奋</span>
+          </div>
+          <a class="source-link-btn" href="https://post.smzdm.com/p/aoml9g79/" target="_blank" rel="noopener noreferrer">查看来源：什么值得买「3.3绯雪与达妮娅抽取建议」</a>
+        </article>
+
+        <article class="item positive">
+          <div class="item-title">莫宁复刻 + 双马尾新皮肤 + 弗洛洛返场：老角色阵容含金量拉满 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">17173（4/15）确认3.3版本莫宁迎来复刻，并罕见地在复刻时直接安排新皮肤——双马尾造型冬日皮肤，评价与角色风格很搭。同时"海墟真神"弗洛洛确认返场复刻，作为高人气角色短期内不会进入混池。此外3.3版本还将安排大量老角色混池复刻（传闻10个池子），"史上最豪华版本"的定位进一步坐实。</div>
+          <div class="item-meta">
+            <span class="pill">来源：17173 / TapTap / 贴吧</span>
+            <span class="pill">重点讨论：B站 / NGA / 库街区 / 小红书 / 微博</span>
+            <span class="pill heat-p1">热度：P1</span>
+            <span class="pill mood-positive">情绪：正面期待</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/04152026/170635806.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「莫宁新皮肤！弗洛洛返场」</a>
+        </article>
+
+        <article class="item neutral">
+          <div class="item-title">3.2版本"过渡长草期"体感强化：下半活动仅880星声，"存星声等3.3"成社区口号 <span class="evidence-tag evidence-indirect">⚡ 间接引用</span></div>
+          <div class="item-desc">3.2下半版本活动体量偏轻在本期得到充分验证。17173统计下半活动仅原野骑士（600星声）+记忆中的绯影（280星声）=880星声，对比上半版本六大活动约2,000+星声差距明显。复刻卡池流水惨淡进一步印证玩家"全力存3.3"的普遍策略。进度较快的玩家面临长草，运营节奏完全依靠3.3预热信息维持社区热度。好在前瞻直播今日播出+版本4月30日更新，等待窗口仅剩两周。</div>
+          <div class="item-meta">
+            <span class="pill">来源：17173 / TapTap / 贴吧</span>
+            <span class="pill">重点讨论：NGA / 贴吧 / 库街区 / B站</span>
+            <span class="pill heat-p2">热度：P2</span>
+            <span class="pill mood-neutral">情绪：中性偏担忧</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/04072026/163508498.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「下半活动仅880星声」</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 重点动向 ==================== -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <div class="section-title">🚀 重点动向</div>
+          <div class="section-sub">聚焦接下来一个月最可能持续发酵的关键动向 · 按热度 P0→P2 排序</div>
+        </div>
+        <div class="pill">6 条</div>
+      </div>
+      <div class="section-body">
+        <article class="item positive" style="border-left-color:#fbbf24;background:linear-gradient(135deg,rgba(30,41,59,0.78),rgba(113,63,18,0.12));">
+          <div class="item-title">🔥🔥 3.3周年庆前瞻直播今日（4/17）19:00全平台播出：公测以来最大版本即将揭晓 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">《鸣潮》3.3版本"二周年庆典"前瞻通讯将于2026年4月17日19:00通过B站/YouTube/Twitch全平台同步播出。官方微博已发布正式预告并附抽奖（10位漂泊者），17173、游民星空、7724等多家媒体跟进报道。届时将正式公布：①绯雪/达妮娅完整技能演示与卡池详情 ②周年庆活动全貌（登录奖励、累抽活动、限时挑战） ③角色自选复刻方案 ④新皮肤上线（莫宁/千咲/琳奈） ⑤惯例300星声兑换码。3.3版本4月30日正式上线，版本持续至6月10日（共6周），被社区/媒体一致称为"公测以来规模最大的版本更新"。线下二周年庆典已确认5月30-31日在日本幕张展览馆举办。</div>
+          <div class="item-meta">
+            <span class="pill">来源：鸣潮官方微博 / 17173 / 游民星空 / 7724 / B站</span>
+            <span class="pill">重点讨论：全平台引爆级别</span>
+            <span class="pill heat-p0" style="font-weight:700;">热度：P0 · 本期最高</span>
+            <span class="pill mood-positive">情绪：强烈正面期待</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/04112026/095244888.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「3.3前瞻通讯4/17播出」</a>
+        </article>
+
+        <article class="item positive">
+          <div class="item-title">B站官方粉丝突破500万 + 爱弥斯贺图官宣：社区影响力里程碑 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">鸣潮B站官方账号粉丝正式突破500万，官方发布爱弥斯主题贺图海报庆祝这一里程碑。爱弥斯作为2月流水最大功臣（持有率67.63%、六链率24.72%），再度被选为里程碑代言角色，暗示其在后续版本中将继续保持核心地位。B站作为鸣潮内容生态最活跃的平台（攻略视频、二创、动画、角色讨论），500万粉丝标志着社区规模进入新量级。</div>
+          <div class="item-meta">
+            <span class="pill">来源：B站（鸣潮官方）/ 17173 / TapTap</span>
+            <span class="pill">重点讨论：B站 / 微博 / 库街区 / 小红书</span>
+            <span class="pill heat-p1">热度：P1</span>
+            <span class="pill mood-positive">情绪：正面庆祝</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/04152026/170635806.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「爱弥斯贺图·B站500万」</a>
+        </article>
+
+        <article class="item positive">
+          <div class="item-title">3.3被定义为"史上最佳入坑时机"：新手40-60抽起步 + 回归双重叠加 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">BitTopup文章明确将3.3版本定义为"游戏史上最佳入坑时机"——新账号可同时享受新手卡池+周年庆登录+追赶邮件，起步即可获得40-60抽。回归玩家可叠加回归礼包+周年庆奖励双重福利。文章建议新手优先路线：达到联觉等级2→完成新手卡池（50抽必得5星）→第一天开始登录签到→推主线解锁探索区域。该定位有望成为3.3版本的重要拉新叙事锚点。</div>
+          <div class="item-meta">
+            <span class="pill">来源：BitTopup / TapTap / B站</span>
+            <span class="pill">重点讨论：TapTap / B站 / 小红书 / 库街区</span>
+            <span class="pill heat-p1">热度：P1</span>
+            <span class="pill mood-positive">情绪：正面·拉新利好</span>
+          </div>
+          <a class="source-link-btn" href="https://bittopup.com/zh/article/Wuthering-Waves-2nd-Anniversary-2026-Ver-33-Events-Free-Astrite-Pulls-Guide" target="_blank" rel="noopener noreferrer">查看来源：BitTopup「最佳入坑时机」</a>
+        </article>
+
+        <article class="item positive">
+          <div class="item-title">金声潮影主题彩胶礼盒 + 鸣乐之时主题周边4/17开售：周边商业化持续发力 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">17173（4/16）报道，鸣潮「金声潮影」主题彩胶礼盒和「鸣乐之时」主题周边将于4月17日（与前瞻直播同日）正式开售。延续了乌丸屋联动周边的商业化节奏，与前瞻直播形成"内容+周边"的联动营销。此前乌丸屋「聚焦定格」系列4/1通贩后反响热烈，鸣潮周边商业生态正在快速成型。</div>
+          <div class="item-meta">
+            <span class="pill">来源：17173 / 鸣潮官方</span>
+            <span class="pill">重点讨论：B站 / 小红书 / 库街区 / 微博</span>
+            <span class="pill heat-p2">热度：P2</span>
+            <span class="pill mood-positive">情绪：正面期待</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/04112026/095244888.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「金声潮影彩胶礼盒」</a>
+        </article>
+
+        <article class="item positive">
+          <div class="item-title">3.4赛博朋克联动 + 3.5梦州新地图持续发酵：长线规划稳定玩家信心 <span class="evidence-tag evidence-indirect">⚡ 间接引用</span></div>
+          <div class="item-desc">3.3周年庆热度之外，3.4赛博朋克联动（联动双角色+洛瑟菈）和3.5梦州新地图（穗穗、心月狐、秧秧SP）的前瞻信息在社区持续发酵。17173、B站多位UP主持续更新"3.3-3.5卡池排期规划"视频。长线内容规划透露释放了积极信号："下半年不缺内容"的叙事正在稳定核心玩家群体的长期投入信心，也为零氪/微氪玩家提供了清晰的资源分配参考框架。</div>
+          <div class="item-meta">
+            <span class="pill">来源：17173 / B站 / 百家号 / TapTap</span>
+            <span class="pill">重点讨论：B站 / NGA / TapTap / 贴吧 / 库街区</span>
+            <span class="pill heat-p2">热度：P2</span>
+            <span class="pill mood-positive">情绪：正面稳定</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/04052026/115015513.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「绯雪最佳队友3.4入池！」</a>
+        </article>
+
+        <article class="item positive">
+          <div class="item-title">二周年线下庆典5/30-31日本幕张展览馆：全球化品牌活动再升级 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">官方确认二周年线下庆典将于2026年5月30-31日在日本幕张展览馆举办。结合此前韩服AGF参展、三星联动、乌丸屋合作等全球化运营动作，鸣潮的线下品牌活动正从"区域性小活动"升级为"国际级展会"。该庆典预计将包含角色Cosplay舞台、周边售卖、粉丝互动等内容，进一步巩固鸣潮在日韩市场的品牌影响力。</div>
+          <div class="item-meta">
+            <span class="pill">来源：BitTopup / 17173 / 鸣潮官方</span>
+            <span class="pill">重点讨论：微博 / B站 / NGA / 小红书</span>
+            <span class="pill heat-p2">热度：P2</span>
+            <span class="pill mood-positive">情绪：正面期待</span>
+          </div>
+          <a class="source-link-btn" href="https://bittopup.com/zh/article/Wuthering-Waves-2nd-Anniversary-2026-Ver-33-Events-Free-Astrite-Pulls-Guide" target="_blank" rel="noopener noreferrer">查看来源：BitTopup「线下庆典·日本幕张」</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 监测平台矩阵 ==================== -->
+    <section class="platform-section">
+      <div class="card-head">
+        <h2>📡 监测平台矩阵</h2>
+        <span class="small-badge">17 个平台</span>
+      </div>
+      <p style="color:#94a3b8;font-size:13px;margin-bottom:4px;">以下为本期舆情监测覆盖的全部平台，按"核心社区→资讯站→短视频/内容→官方渠道"分类，并标注各平台在《鸣潮》讨论生态中的热度。</p>
+      <div class="platform-grid">
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#00a1d6,#0080cc);">B</div>
+            <span class="platform-name">B站</span>
+            <span class="platform-type">核心社区</span>
+          </div>
+          <div class="platform-desc">绯雪建模对比视频爆发、3.3周年庆预热内容密集、官方粉丝破500万里程碑。讨论量持续全平台最高。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot high"></span><span class="heat-dot high"></span> 讨论热度：极高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#ff6b35,#e85d26);">库</div>
+            <span class="platform-name">库街区</span>
+            <span class="platform-type">核心社区</span>
+          </div>
+          <div class="platform-desc">官方社区APP，绯雪预热活动讨论、复刻卡池抽卡分享、周年庆福利猜测活跃。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot high"></span><span class="heat-dot high"></span> 讨论热度：极高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#c93b3b,#a52a2a);">N</div>
+            <span class="platform-name">NGA</span>
+            <span class="platform-type">核心社区</span>
+          </div>
+          <div class="platform-desc">绯雪V2数据深度分析、"轮椅C"强度争议核心阵地、流水数据复盘讨论。硬核理论讨论深度最高。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot high"></span><span class="heat-dot mid"></span> 讨论热度：高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#ff2442,#e91e63);">红</div>
+            <span class="platform-name">小红书</span>
+            <span class="platform-type">核心社区</span>
+          </div>
+          <div class="platform-desc">绯雪建模优化对比高频刷屏、周年庆皮肤颜值讨论、P5R联动涂装晒单。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot high"></span><span class="heat-dot mid"></span> 讨论热度：高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#15c47c,#0fa968);">T</div>
+            <span class="platform-name">TapTap</span>
+            <span class="platform-type">核心社区</span>
+          </div>
+          <div class="platform-desc">"绯雪建模重做上线"专题话题页、复刻流水数据首发讨论、3.3抽卡建议攻略活跃。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot high"></span><span class="heat-dot mid"></span> 讨论热度：高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#4a89dc,#3b7dd8);">贴</div>
+            <span class="platform-name">百度贴吧</span>
+            <span class="platform-type">核心社区</span>
+          </div>
+          <div class="platform-desc">3.3爆料吧汇总帖持续更新、绯雪V2测试服数据深度分析、强度吧理论讨论活跃。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot mid"></span><span class="heat-dot mid"></span> 讨论热度：中高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#f5a623,#e09400);">17</div>
+            <span class="platform-name">17173</span>
+            <span class="platform-type">资讯站</span>
+          </div>
+          <div class="platform-desc">本期信息密度最高来源。前瞻直播预告、4月大事件日历、绯雪轮椅C争议、莫宁新皮肤/弗洛洛返场、材料一图流。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot high"></span><span class="heat-dot high"></span> 信息密度：极高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#2196f3,#1976d2);">游</div>
+            <span class="platform-name">游民星空</span>
+            <span class="platform-type">资讯站</span>
+          </div>
+          <div class="platform-desc">前瞻直播报道、"国产鸣潮史诗级进化"标题引关注。周年庆报道力度提升。</div>
+          <div class="heat-indicator"><span class="heat-dot mid"></span><span class="heat-dot mid"></span><span class="heat-dot mid"></span> 信息密度：中等</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#e6162d,#c4142b);">微</div>
+            <span class="platform-name">微博</span>
+            <span class="platform-type">短内容 / 话题</span>
+          </div>
+          <div class="platform-desc">官方前瞻预告+抽奖、绯雪话题扩散、P5R联动传播。鸣潮超话持续活跃。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot high"></span><span class="heat-dot mid"></span> 话题扩散：高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#1a1a2e,#16213e);border:1px solid rgba(255,255,255,0.2);">抖</div>
+            <span class="platform-name">抖音</span>
+            <span class="platform-type">短视频</span>
+          </div>
+          <div class="platform-desc">绯雪建模换人1.7万赞、3.2下半卡池流水数据视频、复刻抽取建议持续传播。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot high"></span><span class="heat-dot high"></span> 传播效率：极高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#7c3aed,#6d28d9);">官</div>
+            <span class="platform-name">鸣潮官网</span>
+            <span class="platform-type">官方渠道</span>
+          </div>
+          <div class="platform-desc">前瞻直播公告、版本活动时间表、记忆中的绯影活动上线通知。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot high"></span><span class="heat-dot high"></span> 权威性：最高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#f09f24,#e68a00);">W</div>
+            <span class="platform-name">WeGame</span>
+            <span class="platform-type">PC 平台</span>
+          </div>
+          <div class="platform-desc">3.2下半版本同步运营中，关注3.3周年庆期间的平台联动与拉新活动。</div>
+          <div class="heat-indicator"><span class="heat-dot mid"></span><span class="heat-dot mid"></span><span class="heat-dot low"></span> 讨论热度：中等</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 全部参考来源 ==================== -->
+    <section class="source-card">
+      <div class="card-head">
+        <h2>本期全部参考来源</h2>
+        <span class="small-badge">Sources</span>
+      </div>
+      <div class="source-grid">
+        <div class="source-item" style="border:1px solid rgba(250,204,21,0.25);background:linear-gradient(135deg,rgba(30,41,59,0.72),rgba(113,63,18,0.1));">
+          <div class="source-item-title">🔥 3.3版本前瞻通讯4/17 19:00播出预告</div>
+          <div class="source-item-meta">平台：17173 ｜ 类型：版本前瞻 ｜ 时间：2026-04-11</div>
+          <a href="https://news.17173.com/content/04112026/095244888.shtml" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">绯雪建模大改成功·玩家风评彻底反转</div>
+          <div class="source-item-meta">平台：TapTap ｜ 类型：社区讨论 ｜ 时间：2026-04-11</div>
+          <a href="https://www.taptap.cn/moment/792135730045388901" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">3.2下半复刻首日流水仅排76·琳奈独撑场面</div>
+          <div class="source-item-meta">平台：TapTap ｜ 类型：流水数据 ｜ 时间：2026-04-10</div>
+          <a href="https://www.taptap.cn/moment/791777419064246810" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">鸣潮2月流水2.06亿·爱弥斯持有率67.6%</div>
+          <div class="source-item-meta">平台：手游测试实验室 ｜ 类型：营收数据 ｜ 时间：2026-03-03</div>
+          <a href="https://mobilegametest.com/news/wuthering-waves-february-revenue-report" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">鸣潮4月大事件一览·下半版本更新在即</div>
+          <div class="source-item-meta">平台：17173 ｜ 类型：活动日历 ｜ 时间：2026-04-05</div>
+          <a href="https://news.17173.com/content/04052026/031033556.shtml" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">鸣潮×P5R联动详情：Queen与Violet涂装</div>
+          <div class="source-item-meta">平台：GamePlusDaily ｜ 类型：联动详情 ｜ 时间：2026-04-11</div>
+          <a href="https://gameplusdaily.com/news/wuthering-waves-persona-5-collab" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">二周年庆3.3版本活动·免费星声及抽卡指南</div>
+          <div class="source-item-meta">平台：BitTopup ｜ 类型：攻略指南 ｜ 时间：2026-04-13</div>
+          <a href="https://bittopup.com/zh/article/Wuthering-Waves-2nd-Anniversary-2026-Ver-33-Events-Free-Astrite-Pulls-Guide" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">3.3绯雪/达妮娅材料一图流·联动皮肤</div>
+          <div class="source-item-meta">平台：17173 ｜ 类型：角色攻略 ｜ 时间：2026-04-07</div>
+          <a href="https://news.17173.com/content/04072026/163508498.shtml" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">绯雪新晋轮椅C！周年庆送20抽！达妮娅成黑马</div>
+          <div class="source-item-meta">平台：17173 ｜ 类型：强度讨论 ｜ 时间：2026-04-14</div>
+          <a href="https://news.17173.com/content/04142026/170628510.shtml" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">280星声活动！莫宁新皮肤！弗洛洛返场</div>
+          <div class="source-item-meta">平台：17173 ｜ 类型：版本爆料 ｜ 时间：2026-04-15</div>
+          <a href="https://news.17173.com/content/04152026/170635806.shtml" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">3.3绯雪与达妮娅抽取建议及配队规划</div>
+          <div class="source-item-meta">平台：什么值得买 ｜ 类型：抽卡策略 ｜ 时间：2026-03-29</div>
+          <a href="https://post.smzdm.com/p/aoml9g79/" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">绯雪实机建模直接换人·1.7万赞</div>
+          <div class="source-item-meta">平台：抖音 ｜ 类型：短视频 ｜ 时间：2026-04-01</div>
+          <a href="https://www.douyin.com/video/7623790871754496955" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">3.2下半复刻卡池流水数据·国服76日服27</div>
+          <div class="source-item-meta">平台：抖音 ｜ 类型：流水数据 ｜ 时间：2026-04-09</div>
+          <a href="https://jingxuan.douyin.com/m/video/7626720558704528682" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">3.2下半卡池抽取建议·琳奈赞妮菲比</div>
+          <div class="source-item-meta">平台：17173 ｜ 类型：抽卡策略 ｜ 时间：2026-04-07</div>
+          <a href="https://news.17173.com/content/04072026/115529884.shtml" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">绯雪外服人气爆炸！技能拔刀动作强度稳了</div>
+          <div class="source-item-meta">平台：17173 ｜ 类型：角色讨论 ｜ 时间：2026-03-16</div>
+          <a href="https://news.17173.com/content/03162026/165156140.shtml" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">绯雪上线队伍一键成型！最佳队友3.4入池</div>
+          <div class="source-item-meta">平台：17173 ｜ 类型：配队分析 ｜ 时间：2026-04-05</div>
+          <a href="https://news.17173.com/content/04052026/115015513.shtml" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">绯雪风评接连反转·B站视频</div>
+          <div class="source-item-meta">平台：B站 ｜ 类型：讨论视频 ｜ 时间：2026-04-16</div>
+          <a href="https://www.bilibili.com/video/BV1ktdYBBEU1/" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">V2绯雪单人数据及大世界讨论</div>
+          <div class="source-item-meta">平台：百度贴吧（强度吧）｜ 类型：数据分析 ｜ 时间：2026-04-13</div>
+          <a href="https://tieba.baidu.com/p/10632140891" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+      </div>
+      <div class="footer-note">
+        说明：本期内容优先采用近 17 天公开可检索来源。其中"社区热议/强度讨论/流水数据"类条目属于讨论趋势提炼，不等同于官方最终公告。营收数据来源为第三方监测平台手游测试实验室，流水排名来源为TapTap社区博主整理。
+        监测平台覆盖核心社区（B站、库街区、NGA、小红书、TapTap、贴吧）、资讯站（17173、游民星空、腾讯新闻、搜狐游戏、今日头条、好游快爆）、
+        短视频/内容平台（微博、抖音）以及PC/官方渠道（官网、Steam、WeGame）。
+      </div>
+    </section>
+  </div>
+</body>
+</html>

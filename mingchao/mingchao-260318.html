@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《鸣潮》近期舆情监测简报 - 2026年3月18日</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(244,114,182,0.16), transparent 28%),
+        radial-gradient(circle at top left, rgba(59,130,246,0.16), transparent 24%),
+        linear-gradient(135deg, #070b17 0%, #0f172a 46%, #111827 100%);
+      color: #e5eefc;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .container { max-width: 1120px; margin: 0 auto; }
+    .header {
+      padding: 28px 30px;
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(17,24,39,0.88), rgba(15,23,42,0.72));
+      box-shadow: 0 18px 60px rgba(0,0,0,0.32);
+      margin-bottom: 24px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: #f9a8d4;
+      background: rgba(236,72,153,0.12);
+      border: 1px solid rgba(236,72,153,0.25);
+      margin-bottom: 14px;
+    }
+    .header h1 {
+      font-size: 34px;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #93c5fd, #c4b5fd 52%, #f9a8d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .header-subtitle {
+      color: #cbd5e1;
+      line-height: 1.8;
+      font-size: 15px;
+      max-width: 920px;
+    }
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .meta-chip {
+      padding: 8px 12px;
+      border-radius: 12px;
+      background: rgba(30,41,59,0.86);
+      border: 1px solid rgba(148,163,184,0.18);
+      color: #cbd5e1;
+      font-size: 13px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-card, .summary-card, .source-card {
+      border-radius: 20px;
+      border: 1px solid rgba(148,163,184,0.16);
+      background: rgba(15,23,42,0.84);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.24);
+    }
+    .stat-card { padding: 20px; }
+    .stat-title { color: #94a3b8; font-size: 13px; margin-bottom: 8px; }
+    .stat-value { font-size: 30px; font-weight: 700; color: #f8fafc; }
+    .stat-note { margin-top: 8px; color: #a5b4fc; font-size: 12px; }
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .summary-card { padding: 22px; }
+    .card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .card-head h2 {
+      font-size: 18px;
+      color: #f8fafc;
+    }
+    .small-badge {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: #c4b5fd;
+      background: rgba(99,102,241,0.14);
+      border: 1px solid rgba(99,102,241,0.24);
+    }
+    .summary-list {
+      display: grid;
+      gap: 12px;
+    }
+    .summary-item {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(30,41,59,0.72);
+      border: 1px solid rgba(148,163,184,0.12);
+    }
+    .summary-item strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #f8fafc;
+      font-size: 14px;
+    }
+    .summary-item span {
+      color: #cbd5e1;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .tag-cluster {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      color: #e9d5ff;
+      background: linear-gradient(135deg, rgba(59,130,246,0.16), rgba(168,85,247,0.16));
+      border: 1px solid rgba(168,85,247,0.24);
+    }
+    .section {
+      margin-bottom: 24px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.16);
+      background: rgba(15,23,42,0.74);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.24);
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 22px;
+      background: rgba(15,23,42,0.98);
+      border-bottom: 1px solid rgba(148,163,184,0.12);
+    }
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .section-sub {
+      color: #94a3b8;
+      font-size: 13px;
+    }
+    .section-body {
+      padding: 18px;
+      display: grid;
+      gap: 14px;
+    }
+    .item {
+      border-radius: 18px;
+      padding: 18px;
+      background: rgba(30,41,59,0.78);
+      border-left: 4px solid transparent;
+      border: 1px solid rgba(148,163,184,0.12);
+    }
+    .item.positive { border-left-color: #22c55e; }
+    .item.neutral { border-left-color: #38bdf8; }
+    .item.negative { border-left-color: #ef4444; }
+    .item-title {
+      font-size: 17px;
+      line-height: 1.5;
+      color: #f8fafc;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .item-desc {
+      font-size: 14px;
+      line-height: 1.85;
+      color: #d7e2f0;
+      margin-bottom: 14px;
+    }
+    .item-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(51,65,85,0.9);
+      border: 1px solid rgba(148,163,184,0.14);
+      color: #cbd5e1;
+      font-size: 12px;
+    }
+    .heat-p0 { color: #fecaca; background: rgba(127,29,29,0.55); border-color: rgba(248,113,113,0.28); }
+    .heat-p1 { color: #fed7aa; background: rgba(124,45,18,0.55); border-color: rgba(251,146,60,0.28); }
+    .heat-p2 { color: #fde68a; background: rgba(113,63,18,0.55); border-color: rgba(250,204,21,0.28); }
+    .mood-positive { color: #bbf7d0; }
+    .mood-neutral { color: #bae6fd; }
+    .mood-negative { color: #fecaca; }
+    .source-card {
+      padding: 22px;
+      margin-bottom: 24px;
+    }
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .source-item {
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(30,41,59,0.72);
+      border: 1px solid rgba(148,163,184,0.12);
+    }
+    .source-item a {
+      color: #93c5fd;
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .source-item a:hover { text-decoration: underline; }
+    .source-item-title {
+      font-size: 14px;
+      color: #f8fafc;
+      margin-bottom: 6px;
+      line-height: 1.6;
+      font-weight: 600;
+    }
+    .source-item-meta {
+      color: #94a3b8;
+      font-size: 12px;
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+    .footer-note {
+      color: #94a3b8;
+      font-size: 12px;
+      line-height: 1.8;
+      margin-top: 14px;
+    }
+    .platform-section {
+      margin-bottom: 24px;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(148,163,184,0.16);
+      background: rgba(15,23,42,0.74);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.24);
+      padding: 22px;
+    }
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+    .platform-card {
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(30,41,59,0.72);
+      border: 1px solid rgba(148,163,184,0.12);
+    }
+    .platform-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .platform-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .platform-name {
+      font-size: 15px;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+    .platform-type {
+      font-size: 11px;
+      color: #94a3b8;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(51,65,85,0.6);
+      margin-left: auto;
+    }
+    .platform-desc {
+      font-size: 13px;
+      color: #cbd5e1;
+      line-height: 1.7;
+    }
+    .heat-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 8px;
+      font-size: 12px;
+      color: #a5b4fc;
+    }
+    .heat-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #a5b4fc;
+    }
+    .heat-dot.high { background: #f87171; }
+    .heat-dot.mid { background: #fb923c; }
+    .heat-dot.low { background: #fbbf24; }
+    .source-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 10px;
+      font-size: 12px;
+      color: #93c5fd;
+      background: rgba(59,130,246,0.1);
+      border: 1px solid rgba(59,130,246,0.25);
+      text-decoration: none;
+      transition: all 0.2s;
+      margin-top: 10px;
+    }
+    .source-link-btn:hover {
+      background: rgba(59,130,246,0.2);
+      border-color: rgba(59,130,246,0.45);
+      color: #bfdbfe;
+      text-decoration: none;
+    }
+    .source-link-btn::before { content: "🔗"; }
+    .evidence-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+    .evidence-direct {
+      background: rgba(34,197,94,0.15);
+      border: 1px solid rgba(34,197,94,0.35);
+      color: #4ade80;
+    }
+    .evidence-indirect {
+      background: rgba(251,191,36,0.13);
+      border: 1px solid rgba(251,191,36,0.32);
+      color: #fbbf24;
+    }
+    @media (max-width: 900px) {
+      .grid-4, .overview-grid, .source-grid, .platform-grid { grid-template-columns: 1fr; }
+      .header h1 { font-size: 28px; }
+      body { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="eyebrow">🎯 鸣潮近期舆情监测 · 近一周视角 · 正式版V3</div>
+      <h1>《鸣潮》近期舆情、游戏资讯与大事件简报</h1>
+      <p class="header-subtitle">
+        本页聚焦 <strong>2026 年 3 月 11 日至 2026 年 3 月 18 日</strong> 的公开信息，核心围绕 <strong>3.2 版本前瞻直播（3/13 已播出）</strong> 与 <strong>3.2 版本明日更新（3/19）</strong> 前夕的密集资讯释放。
+        监测范围覆盖官方渠道、核心讨论社区、主流游戏资讯站与短视频/内容平台，并按 <strong>P0 / P1 / P2</strong> 标注热度，其中 <strong>P0</strong> 为相对热度最高。所有板块均按热度从高到低排序。<strong>每条舆情均附来源链接，可一键跳转查看原文。</strong>
+      </p>
+      <div class="header-meta">
+        <div class="meta-chip">📅 覆盖时间：2026/03/11 - 2026/03/18（近7天）</div>
+        <div class="meta-chip">🕦 生成时间：2026/03/18 12:00</div>
+        <div class="meta-chip">🎮 当前版本：3.1 尾声 → 3.2「于影中启明的决心」明日更新</div>
+        <div class="meta-chip">📡 监测平台（17个）：B站 / 库街区 / 小红书 / NGA / TapTap / 微博 / 抖音 / 贴吧 / 好游快爆 / 17173 / 游民星空 / 腾讯新闻 / 搜狐游戏 / 今日头条 / 企鹅号 / WeGame / 官网</div>
+      </div>
+    </header>
+
+    <section class="grid-4">
+      <div class="stat-card">
+        <div class="stat-title">总舆情条目</div>
+        <div class="stat-value">16</div>
+        <div class="stat-note">版本更新前夕 + 前瞻直播后讨论集中爆发</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">版本动态</div>
+        <div class="stat-value">4</div>
+        <div class="stat-note">3.2 定档、前瞻直播、出海成绩、联动官宣</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">热点舆论</div>
+        <div class="stat-value">7</div>
+        <div class="stat-note">西格莉卡强度、绯雪达妮娅建模、抽卡策略</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">重点动向</div>
+        <div class="stat-value">5</div>
+        <div class="stat-note">明日版本更新、周年庆预热、优化落地</div>
+      </div>
+    </section>
+
+    <section class="overview-grid">
+      <div class="summary-card">
+        <div class="card-head">
+          <h2>本周舆论概况</h2>
+          <span class="small-badge">Overview</span>
+        </div>
+        <div class="summary-list">
+          <div class="summary-item">
+            <strong>1. 3.2 前瞻直播引爆全平台：西格莉卡、终焉矩阵、Muse Dash 联动三大看点炸场</strong>
+            <span>3 月 13 日前瞻直播如期播出，新五星角色西格莉卡实机演示、全新高难常驻挑战"终焉矩阵"、与《Muse Dash 喵斯快跑》跨界联动以及 P5R 二期联动等内容集中释放，B站弹幕、NGA、库街区讨论量迅速拉满，构成本周舆情最大峰值。</span>
+          </div>
+          <div class="summary-item">
+            <strong>2. 3.3 周年庆角色建模集中曝光：达妮娅双形态 + 绯雪四视图成新一轮讨论焦点</strong>
+            <span>达妮娅双形态四视图（含"黑化"二阶段）、绯雪冰系巫女建模、莫宁冬日皮肤、千咲/琳奈新皮肤等信息密集释出，社区讨论从"3.2 抽不抽"迅速转向"3.3 周年庆资源怎么分配"。达妮娅大腿上的阿列夫手印引发大量剧情猜测。</span>
+          </div>
+          <div class="summary-item">
+            <strong>3. 出海成绩持续发酵：2月收入环比暴涨130%，全球累计流水突破5亿美元</strong>
+            <span>Sensor Tower 发布的 2 月出海榜显示《鸣潮》海外收入排名攀升 10 位至第 8，单日全球流水超 600 万美元，被时代财经评选为"出海潜力常青榜第三名"。行业媒体持续引用，"常青游戏"标签正在被广泛接受。</span>
+          </div>
+          <div class="summary-item">
+            <strong>4. 系统优化成为版本前瞻的隐藏好评点：声骸方案 + 超高画质 + 摩托避障</strong>
+            <span>前瞻直播中公布的声骸管理方案优化（按套装分类、可分享导入）、移动端超高画质、PC 渲染距离可调、科考摩托自动避障等优化内容在B站、库街区收获大量好评。"老库终于听到我们声音了"成为常见弹幕。</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary-card">
+        <div class="card-head">
+          <h2>本期高频主题</h2>
+          <span class="small-badge">Topics</span>
+        </div>
+        <div class="tag-cluster">
+          <span class="tag">#3.2版本明日更新</span>
+          <span class="tag">#西格莉卡气动臂铠</span>
+          <span class="tag">#终焉矩阵高难常驻</span>
+          <span class="tag">#MuseDash联动</span>
+          <span class="tag">#达妮娅双形态建模</span>
+          <span class="tag">#绯雪冰系巫女</span>
+          <span class="tag">#莫宁冬日皮肤</span>
+          <span class="tag">#出海常青榜第三</span>
+          <span class="tag">#流水破5亿美元</span>
+          <span class="tag">#声骸管理优化</span>
+          <span class="tag">#移动端超高画质</span>
+          <span class="tag">#3.3周年庆蓄力</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 版本动态 ==================== -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <div class="section-title">🔄 版本动态</div>
+          <div class="section-sub">聚焦官方已确认节点与当前版本运行状态 · 按热度 P0→P2 排序</div>
+        </div>
+        <div class="pill">4 条</div>
+      </div>
+      <div class="section-body">
+        <!-- P0 -->
+        <article class="item positive">
+          <div class="item-title">3.2 版本「于影中启明的决心」3 月 19 日正式更新：新五星西格莉卡 + 全新剧情 + 七大活动 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">官方正式公告 3.2 版本将于 3 月 19 日 04:00-11:00 维护更新。核心内容包括：新五星共鸣者「西格莉卡」（气动/臂铠）及专属五星武器「昭日译注」；潮汐任务第三章·第四幕「影下不落的黄金」全新剧情；7 个限时/常驻活动（沿着节拍启航、拉海洛方块、原野骑士、餐能中心补完计划、记忆中的绯影、七日签到、诸星密语）；全新高难常驻挑战「终焉矩阵」；补偿 300 星声 + 2 结晶溶剂。PC 端预下载已于 3/17 开启，移动端因优化暂不支持预下载，需预留 28GB 空间。</div>
+          <div class="item-meta">
+            <span class="pill">来源：鸣潮官网公告 / TapTap / 17173</span>
+            <span class="pill">重点讨论：B站 / TapTap / 库街区 / 微博 / 17173 / 抖音 / 游民星空</span>
+            <span class="pill heat-p0">热度：P0</span>
+            <span class="pill mood-positive">情绪：正面期待</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/03152026/161347172.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「3.2版本更新维护预告」</a>
+        </article>
+        <!-- P0 -->
+        <article class="item positive">
+          <div class="item-title">2 月出海成绩爆发：收入环比暴涨 130%，全球累计流水突破 5 亿美元，获评"常青游戏" <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">Sensor Tower 发布 2 月中国手游出海榜，《鸣潮》海外收入排名大幅攀升 10 位至第 8，环比增长 130%，单日全球流水峰值超 600 万美元，再次登顶全球手游畅销榜。截至 2 月底全球累计流水正式突破 5 亿美元。时代财经发布的《2026 年 2 月中国游戏出海潜力常青榜》中，《鸣潮》位列第三名，被评价为"已从早期困境走出，成为一款真正的常青游戏"。核心驱动因素为 3.1 版本新角色爱弥斯上线 + 露帕/千咲复刻拉动消费。</div>
+          <div class="item-meta">
+            <span class="pill">来源：Sensor Tower / 游戏葡萄 / 时代财经 / 17173</span>
+            <span class="pill">重点讨论：B站 / NGA / 腾讯新闻 / 搜狐游戏 / 今日头条 / 知乎</span>
+            <span class="pill heat-p0">热度：P0</span>
+            <span class="pill mood-positive">情绪：正面自豪</span>
+          </div>
+          <a class="source-link-btn" href="https://news.qq.com/rain/a/20260309A05COL00" target="_blank" rel="noopener noreferrer">查看来源：游戏葡萄「2月出海榜·鸣潮单日流水超600万美元」</a>
+        </article>
+        <!-- P1 -->
+        <article class="item positive">
+          <div class="item-title">《鸣潮》×《Muse Dash 喵斯快跑》跨界联动正式官宣：三首经典曲目上线 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">3 月 14 日官方宣布 3.2 版本将与知名音游《Muse Dash 喵斯快跑》开展特别合作。经典曲目《雨后甜点》《Final Step！》《Cthugha》将随「沿着节拍启航」音乐挑战活动同步上线。玩家操控飞船在宇宙赛道上根据音乐节拍更换轨道完成挑战。联动 PV 在 B站获得大量播放，弹幕"老库不想让主包赚钱""我也要打谱吗？"形成独特讨论氛围。同时 P5R 二期联动也将延续。</div>
+          <div class="item-meta">
+            <span class="pill">来源：鸣潮官方 / 17173 / B站</span>
+            <span class="pill">重点讨论：B站 / 库街区 / 微博 / 抖音 / TapTap</span>
+            <span class="pill heat-p1">热度：P1</span>
+            <span class="pill mood-positive">情绪：正面惊喜</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/03142026/100851210.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「鸣潮×Muse Dash联动官宣」</a>
+        </article>
+        <!-- P1 -->
+        <article class="item positive">
+          <div class="item-title">3.2 前瞻直播 3/13 播出：终焉矩阵 + 声骸优化 + 超高画质等重磅内容释放 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">3 月 13 日 19:00 前瞻直播如期播出，除新角色和活动外，重点公布了全新高难常驻挑战「终焉矩阵」（周期性挑战，每个周期含多阶段独立奖励，不同于深塔限时机制）。优化方面包括：声骸管理方案按合鸣套装分类 + 可分享导入、科考摩托巡航自动避障 + 底盘优化、移动端新增超高画质预设、PC端新增渲染距离选项。直播期间释放三枚兑换码（DARKSIDE / RABBITHOLE / RUNEREADER），共300星声。</div>
+          <div class="item-meta">
+            <span class="pill">来源：鸣潮官方直播 / B站 / 17173 / TapTap</span>
+            <span class="pill">重点讨论：B站 / 库街区 / NGA / 17173 / 微博 / 抖音</span>
+            <span class="pill heat-p1">热度：P1</span>
+            <span class="pill mood-positive">情绪：正面好评</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/03152026/001002053.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「3.2版本全部优化内容一览」</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 热点舆论 ==================== -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <div class="section-title">💬 热点舆论</div>
+          <div class="section-sub">聚焦社区争论点、角色强度讨论、抽卡策略与玩家关注焦点 · 按热度 P0→P2 排序</div>
+        </div>
+        <div class="pill">7 条</div>
+      </div>
+      <div class="section-body">
+        <!-- P0 -->
+        <article class="item neutral">
+          <div class="item-title">🔥 达妮娅双形态四视图曝光引爆讨论：二阶段"黑化"建模 + 阿列夫手印成最热话题 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">3 月 17 日社区放出达妮娅完整四视图建模，令所有人意外的是达妮娅有两种形态——正常形态和二阶段形态。二阶段大腿上出现的阿列夫手印引发大量剧情猜测（"和阿列夫有关联？""黑化路线？"），建模丝袜设计也成为讨论热点。达妮娅定位为热熔副C、爱弥斯聚爆体系核心队友，与绯雪同为 3.3 周年庆新五星，被玩家称为"两个都想抽""星声完全不够"。抖音上相关短视频收获超 23.9 万点赞。</div>
+          <div class="item-meta">
+            <span class="pill">来源：17173 / B站 / 抖音</span>
+            <span class="pill">重点讨论：B站 / 抖音 / 库街区 / NGA / 小红书 / 微博 / TapTap</span>
+            <span class="pill heat-p0">热度：P0</span>
+            <span class="pill mood-positive">情绪：正面兴奋 + 剧情猜测</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/03172026/135335295.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「3.3新角色达妮娅四视图曝光·双形态」</a>
+        </article>
+        <!-- P0 -->
+        <article class="item neutral">
+          <div class="item-title">🔥 绯雪冰系巫女建模四视图放出 vs 达妮娅 → "绯雪瞬间不香了？"引发选择困难 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">绯雪同步曝光建模四视图，白发红衣巫女形象、珂莱塔同款白毛、冷凝主C定位、霜渐效应新机制使其成为期待值最高的冰系角色。但在达妮娅双形态建模同时放出后，部分玩家感到"绯雪瞬间不香了"，两者的颜值与定位形成激烈对比讨论。核心争议：绯雪冰C vs 达妮娅爱弥斯队友，3.3 周年庆资源到底给谁？"星声不够"成为全平台共鸣。</div>
+          <div class="item-meta">
+            <span class="pill">来源：17173 / B站 / 百度百科</span>
+            <span class="pill">重点讨论：B站 / NGA / 库街区 / 小红书 / TapTap / 抖音 / 微博</span>
+            <span class="pill heat-p0">热度：P0</span>
+            <span class="pill mood-neutral">情绪：积极讨论 + 选择焦虑</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/03172026/140340216.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「达妮娅四视图·绯雪建模对比」</a>
+        </article>
+        <!-- P0 -->
+        <article class="item neutral">
+          <div class="item-title">🔥 "西格莉卡强度爆冷"引发版本前夕抽卡策略大讨论 <span class="evidence-tag evidence-indirect">⚡ 间接引用</span></div>
+          <div class="item-desc">前瞻直播后，多位 B站 UP 主和攻略区评测认为西格莉卡的实际强度"并非T0级别"，社区出现"西格莉卡强度爆冷"的说法。核心讨论围绕：绑定仇远体系深度、无仇远时泛用性较低、3.3 绯雪/达妮娅更值得等待。这进一步加剧了"3.2 观望 vs 3.3 梭哈"的资源博弈。有仇远玩家倾向抽取补齐队伍，无仇远玩家则大多选择跳过。B站"鸣潮3.2抽取建议"类视频播放量集体上涨。</div>
+          <div class="item-meta">
+            <span class="pill">来源：B站 UP主评测 / 17173 / 搜狐</span>
+            <span class="pill">重点讨论：B站 / NGA / 库街区 / 小红书 / 抖音 / TapTap / 贴吧</span>
+            <span class="pill heat-p0">热度：P0</span>
+            <span class="pill mood-neutral">情绪：中性偏策略</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/03092026/101027009.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「3.2-3.4卡池新角色·西格莉卡强度讨论」</a>
+        </article>
+        <!-- P1 -->
+        <article class="item positive">
+          <div class="item-title">莫宁冬日皮肤官宣 + 千咲/琳奈新皮肤爆料 → 周年庆三款皮肤引发期待 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">最新爆料确认莫宁将获得冬日服饰皮肤，千咲和琳奈也有新皮肤即将上线，预计 3.3 周年庆版本共推出三款新皮肤。莫宁冬日皮肤设计在社区收获大量好评。早期有玩家猜测周年庆可能推出打折皮肤券，进一步提高了皮肤相关话题的讨论热度。同时爱弥斯在西班牙官推粉丝破10万后的全新贺图也引发传播。</div>
+          <div class="item-meta">
+            <span class="pill">来源：17173 / B站</span>
+            <span class="pill">重点讨论：B站 / 库街区 / 小红书 / 微博 / 抖音</span>
+            <span class="pill heat-p1">热度：P1</span>
+            <span class="pill mood-positive">情绪：正面期待</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/03172026/135335295.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「莫宁冬日皮肤·千咲琳奈新皮肤」</a>
+        </article>
+        <!-- P1 -->
+        <article class="item positive">
+          <div class="item-title">绯雪霜渐效应体系引发理论讨论：三链质变 + 梦州完全体 → 冰队翻身希望 <span class="evidence-tag evidence-indirect">⚡ 间接引用</span></div>
+          <div class="item-desc">围绕绯雪的霜渐效应新机制，社区理论讨论持续升温。"绯雪三链质变""霜渐完全体在梦州""新冰效应持平卡提"等说法广泛传播。贴吧玩家对霜渐效应的叠层减速→满层冰冻机制进行详细分析，讨论千咲在该体系中的定位。多位 UP 主预判绯雪强度"目前最高"，冰队将从长期弱势属性翻身。3.3 版本对冰系玩家的吸引力极大。</div>
+          <div class="item-meta">
+            <span class="pill">来源：B站 / 17173 / 百度贴吧</span>
+            <span class="pill">重点讨论：NGA / B站 / 库街区 / 贴吧 / TapTap</span>
+            <span class="pill heat-p1">热度：P1</span>
+            <span class="pill mood-positive">情绪：正面期待 + 理论分析</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/03102026/231120403.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「3.3绯雪强度在线·霜渐效应持平卡提」</a>
+        </article>
+        <!-- P1 -->
+        <article class="item negative">
+          <div class="item-title">B站 UP 主"清雨Tpor"毁号事件持续发酵：黄V消失、疑似永封，引鸣潮社区广泛讨论 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">3 月 11 日，B站争议 UP 主清雨Tpor（约40万粉丝）的账号黄V标识消失，被广泛视为平台即将永久封禁的信号。此事起因于 3 月 1 日清雨在《三角洲行动》直播中发现粉丝"五月食伍"舰长过期后，30秒内清空其账号全部珍贵物资（200多发绝版子弹、十几组红盒）。事件上了电视新闻，法律程序已启动。虽然事件本身与鸣潮无直接关系，但因清雨此前也涉及多个游戏社区，该话题在原神、鸣潮等玩家群体中引发广泛讨论，涉及"主播行业规范""账号安全""粉丝权益"等延伸话题。</div>
+          <div class="item-meta">
+            <span class="pill">来源：游民星空 / 知乎 / B站 / 百度百科</span>
+            <span class="pill">重点讨论：B站 / 知乎 / 贴吧 / NGA / 微博</span>
+            <span class="pill heat-p1">热度：P1</span>
+            <span class="pill mood-negative">情绪：负面谴责</span>
+          </div>
+          <a class="source-link-btn" href="https://www.gamersky.com/news/202603/2104068.shtml" target="_blank" rel="noopener noreferrer">查看来源：游民星空「清雨Tpor黄V消失·大概率永封」</a>
+        </article>
+        <!-- P2 -->
+        <article class="item neutral">
+          <div class="item-title">3.3 周年庆角色自选复刻 + 莫宁/爱弥斯复刻时间曝光 <span class="evidence-tag evidence-indirect">⚡ 间接引用</span></div>
+          <div class="item-desc">多个爆料渠道确认 3.3 周年庆版本将提供角色自选复刻机制，莫宁和爱弥斯在 3.3 版本有复刻安排。"周年庆全角色复刻助你补强队伍"的说法在 17173、B站持续传播，吸引了大量新入坑和错过角色的玩家关注。结合绯雪+达妮娅双新五星，3.3 被称为"史上最豪华版本"。</div>
+          <div class="item-meta">
+            <span class="pill">来源：17173 / B站</span>
+            <span class="pill">重点讨论：B站 / 库街区 / NGA / TapTap / 贴吧</span>
+            <span class="pill heat-p2">热度：P2</span>
+            <span class="pill mood-positive">情绪：正面期待</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/03022026/003435710.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「周年庆角色自选复刻·莫宁3.3有新皮肤」</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 重点动向 ==================== -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <div class="section-title">🚀 重点动向</div>
+          <div class="section-sub">聚焦接下来一周最可能继续发酵的关键动作 · 按热度 P0→P2 排序</div>
+        </div>
+        <div class="pill">5 条</div>
+      </div>
+      <div class="section-body">
+        <!-- P0 -->
+        <article class="item positive">
+          <div class="item-title">明日（3/19）3.2 版本正式上线：西格莉卡实机反馈 + 终焉矩阵攻略 → 预计引爆下一波讨论高峰 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">3 月 19 日 04:00-11:00 维护后 3.2 版本正式上线。西格莉卡上线后的实际表现、抽卡反馈、声骸搭配和终焉矩阵首周攻略将成为社区核心话题。历史上每次新角色上线首日都是 B站、库街区、小红书互动量最高的时段。同时300星声补偿 + 2个结晶溶剂维护补偿将拉动登录活跃。PC预下载已于3/17开启，建议预留130GB空间。</div>
+          <div class="item-meta">
+            <span class="pill">来源：鸣潮官网 / 17173 / TapTap</span>
+            <span class="pill">重点讨论：B站 / 库街区 / 小红书 / 微博 / 抖音 / 游民星空 / 好游快爆</span>
+            <span class="pill heat-p0">热度：P0</span>
+            <span class="pill mood-positive">情绪：正面高期待</span>
+          </div>
+          <a class="source-link-btn" href="https://www.taptap.cn/moment/781918010041435066" target="_blank" rel="noopener noreferrer">查看来源：TapTap「3.2版本更新维护预告」</a>
+        </article>
+        <!-- P0 -->
+        <article class="item positive">
+          <div class="item-title">3.3 周年庆版本持续蓄力：达妮娅实机 + 绯雪技能 + CV阵容 → 下一波信息密集释放期 <span class="evidence-tag evidence-indirect">⚡ 间接引用</span></div>
+          <div class="item-desc">3.3 版本预计 4 月 30 日更新（已被多个内容创作者确认"这个版本没有推迟"）。目前达妮娅CV阵容已揭晓、声痕设计暗藏惊喜、实机建模持续曝光中。绯雪技能细节和立绘正式放出时间也在社区预测中。从当前信息密度判断，3.2 版本中后期将迎来 3.3 的密集预热周期，社区讨论将从 3.2 实测转向 3.3 规划。</div>
+          <div class="item-meta">
+            <span class="pill">来源：B站 / 17173 / 抖音</span>
+            <span class="pill">重点讨论：B站 / NGA / 库街区 / 小红书 / TapTap / 微博 / 抖音</span>
+            <span class="pill heat-p0">热度：P0</span>
+            <span class="pill mood-positive">情绪：正面期待</span>
+          </div>
+          <a class="source-link-btn" href="https://www.bilibili.com/video/BV13jwJzcEYX/" target="_blank" rel="noopener noreferrer">查看来源：B站「3.3版本4月30日·达妮娅信息汇总」</a>
+        </article>
+        <!-- P1 -->
+        <article class="item positive">
+          <div class="item-title">声骸管理方案优化 + 超高画质落地 → 3.2 版本体验升级将转化为实际口碑 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">3.2 版本将正式落地声骸管理方案优化（按合鸣套装分类、可分享/导入方案码）、移动端超高画质选项、PC渲染距离可调等功能。这些优化在前瞻直播期间获得了玩家广泛好评（"老库终于听到我们声音了"）。版本上线后优化体验的实际反馈将成为正面口碑的重要来源，尤其声骸方案分享功能可能催生新一波社区攻略内容。不过声骸背包扩容诉求暂未得到回应。</div>
+          <div class="item-meta">
+            <span class="pill">来源：17173 / B站 / 搜狐 / TapTap</span>
+            <span class="pill">重点讨论：B站 / 库街区 / NGA / TapTap / 好游快爆</span>
+            <span class="pill heat-p1">热度：P1</span>
+            <span class="pill mood-positive">情绪：正面好评</span>
+          </div>
+          <a class="source-link-btn" href="https://www.sohu.com/a/996602415_122598898" target="_blank" rel="noopener noreferrer">查看来源：搜狐「3.2版本优化前瞻·移动端超高画质」</a>
+        </article>
+        <!-- P1 -->
+        <article class="item positive">
+          <div class="item-title">鸣潮×88VIP 联动活动开启 + 西班牙官推破 10 万 → 商业合作与海外影响力双线扩展 <span class="evidence-tag evidence-direct">✅ 真实直采</span></div>
+          <div class="item-desc">3 月 17 日鸣潮×88VIP 联动活动开启，提供专属福利，进一步拓展商业合作版图。此前确认与高德地图合作推出爱弥斯专属语音包、线下爱弥斯主题快闪店等。海外方面，西班牙官推粉丝突破 10 万并发布爱弥斯全新贺图，赛博朋克：边缘行者 2026 年联动计划也仍在推进中。多维度商业拓展标志着《鸣潮》IP运营进入新阶段。</div>
+          <div class="item-meta">
+            <span class="pill">来源：17173 / 鸣潮官方 / 虎牙</span>
+            <span class="pill">重点讨论：微博 / B站 / 库街区 / 小红书</span>
+            <span class="pill heat-p1">热度：P1</span>
+            <span class="pill mood-positive">情绪：正面</span>
+          </div>
+          <a class="source-link-btn" href="https://news.17173.com/content/03172026/135335295.shtml" target="_blank" rel="noopener noreferrer">查看来源：17173「爱弥斯贺图·88VIP联动」</a>
+        </article>
+        <!-- P2 -->
+        <article class="item neutral">
+          <div class="item-title">"游戏出海"纳入国家十五五规划 → 鸣潮等出海标杆产品关注度提升 <span class="evidence-tag evidence-indirect">⚡ 间接引用</span></div>
+          <div class="item-desc">近日"游戏出海"正式纳入国家"十五五"规划，行业媒体在解读政策时频繁引用《鸣潮》作为出海成功案例。搜狐等平台发文称"游戏早已超越单纯娱乐"，将鸣潮列入出海常青榜进行重点分析。这一政策利好虽非直接舆情，但提升了鸣潮在行业分析和公众认知中的地位，有助于后续品牌曝光与商务合作。</div>
+          <div class="item-meta">
+            <span class="pill">来源：搜狐 / 澎湃新闻 / 时代财经</span>
+            <span class="pill">重点讨论：搜狐游戏 / 腾讯新闻 / 今日头条 / 知乎</span>
+            <span class="pill heat-p2">热度：P2</span>
+            <span class="pill mood-positive">情绪：正面利好</span>
+          </div>
+          <a class="source-link-btn" href="https://www.sohu.com/a/997324992_121984121" target="_blank" rel="noopener noreferrer">查看来源：搜狐「游戏出海纳入十五五规划」</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== 监测平台矩阵 ==================== -->
+    <section class="platform-section">
+      <div class="card-head">
+        <h2>📡 监测平台矩阵</h2>
+        <span class="small-badge">17 个平台</span>
+      </div>
+      <p style="color:#94a3b8;font-size:13px;margin-bottom:4px;">以下为本期舆情监测覆盖的全部平台，按"核心社区→资讯站→短视频/内容→官方渠道"分类，并标注各平台在《鸣潮》讨论生态中的热度。</p>
+      <div class="platform-grid">
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#00a1d6,#0080cc);">B</div>
+            <span class="platform-name">B站</span>
+            <span class="platform-type">核心社区</span>
+          </div>
+          <div class="platform-desc">视频攻略、角色实测、前瞻直播弹幕、评论区讨论主阵地。3.2前瞻直播讨论量爆发。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot high"></span><span class="heat-dot high"></span> 讨论热度：极高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#ff6b35,#e85d26);">库</div>
+            <span class="platform-name">库街区</span>
+            <span class="platform-type">核心社区</span>
+          </div>
+          <div class="platform-desc">官方社区APP，角色讨论、攻略分享、Wiki站、KURO官方活动运营主阵地。玩家粘性最高。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot high"></span><span class="heat-dot high"></span> 讨论热度：极高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#c93b3b,#a52a2a);">N</div>
+            <span class="platform-name">NGA</span>
+            <span class="platform-type">核心社区</span>
+          </div>
+          <div class="platform-desc">硬核玩家讨论区，角色数值解析、声骸搭配、终焉矩阵攻略与霜渐效应理论分析深度最高。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot high"></span><span class="heat-dot mid"></span> 讨论热度：高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#ff2442,#e91e63);">红</div>
+            <span class="platform-name">小红书</span>
+            <span class="platform-type">核心社区</span>
+          </div>
+          <div class="platform-desc">图文笔记讨论角色颜值、建模对比、抽卡分享、二创同人，达妮娅/绯雪建模对比讨论集中。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot high"></span><span class="heat-dot mid"></span> 讨论热度：高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#15c47c,#0fa968);">T</div>
+            <span class="platform-name">TapTap</span>
+            <span class="platform-type">核心社区</span>
+          </div>
+          <div class="platform-desc">游戏官方论坛、评分评价平台。3.2版本维护预告首发地之一，玩家反馈与版本讨论活跃。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot mid"></span><span class="heat-dot mid"></span> 讨论热度：中高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#4a89dc,#3b7dd8);">贴</div>
+            <span class="platform-name">百度贴吧</span>
+            <span class="platform-type">核心社区</span>
+          </div>
+          <div class="platform-desc">鸣潮吧/强度吧，终焉矩阵阵容讨论、霜渐效应机制分析、长帖争议集中地，长尾效应强。</div>
+          <div class="heat-indicator"><span class="heat-dot mid"></span><span class="heat-dot mid"></span><span class="heat-dot low"></span> 讨论热度：中等</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#f5a623,#e09400);">17</div>
+            <span class="platform-name">17173</span>
+            <span class="platform-type">资讯站</span>
+          </div>
+          <div class="platform-desc">本期信息密度最高的资讯来源。版本预告、活动汇总、角色建模曝光、优化内容等核心稿件均汇总于此。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot high"></span><span class="heat-dot high"></span> 信息密度：极高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#2196f3,#1976d2);">游</div>
+            <span class="platform-name">游民星空</span>
+            <span class="platform-type">资讯站</span>
+          </div>
+          <div class="platform-desc">版本攻略、清雨Tpor毁号事件报道、版本上线时间确认等内容来源。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot mid"></span><span class="heat-dot mid"></span> 信息密度：高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#0052d9,#0040b0);">腾</div>
+            <span class="platform-name">腾讯新闻/企鹅号</span>
+            <span class="platform-type">资讯站</span>
+          </div>
+          <div class="platform-desc">出海榜分析、流水数据等行业扩散主渠道。游戏葡萄等内容通过企鹅号体系快速分发。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot mid"></span><span class="heat-dot mid"></span> 扩散效率：高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#e44d26,#c7381d);">搜</div>
+            <span class="platform-name">搜狐游戏</span>
+            <span class="platform-type">资讯站</span>
+          </div>
+          <div class="platform-desc">行业分析、收入数据、出海常青榜、政策解读等深度文章载体。本期出海报道核心来源之一。</div>
+          <div class="heat-indicator"><span class="heat-dot mid"></span><span class="heat-dot mid"></span><span class="heat-dot mid"></span> 信息密度：中等</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#ff4500,#cc3700);">头</div>
+            <span class="platform-name">今日头条</span>
+            <span class="platform-type">资讯站</span>
+          </div>
+          <div class="platform-desc">算法推荐型内容平台，鸣潮出海成绩、版本资讯通过信息流触达泛游戏用户群体。</div>
+          <div class="heat-indicator"><span class="heat-dot mid"></span><span class="heat-dot mid"></span><span class="heat-dot low"></span> 扩散效率：中等</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#4caf50,#388e3c);">快</div>
+            <span class="platform-name">好游快爆</span>
+            <span class="platform-type">资讯站</span>
+          </div>
+          <div class="platform-desc">手游下载入口 + 攻略社区。版本更新提醒和下载引导的重要窗口。</div>
+          <div class="heat-indicator"><span class="heat-dot mid"></span><span class="heat-dot low"></span><span class="heat-dot low"></span> 讨论热度：中等偏低</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#e6162d,#c4142b);">微</div>
+            <span class="platform-name">微博</span>
+            <span class="platform-type">短内容 / 话题</span>
+          </div>
+          <div class="platform-desc">鸣潮超话、官方微博运营主阵地。联动官宣、贺图发布、话题扩散的最快通道。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot high"></span><span class="heat-dot mid"></span> 话题扩散：高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#1a1a2e,#16213e);border:1px solid rgba(255,255,255,0.2);">抖</div>
+            <span class="platform-name">抖音</span>
+            <span class="platform-type">短视频</span>
+          </div>
+          <div class="platform-desc">达妮娅建模短视频23.9万赞、版本前瞻内容、抽卡安利传播极快，触达泛用户群体。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot high"></span><span class="heat-dot mid"></span> 传播效率：高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#7c3aed,#6d28d9);">官</div>
+            <span class="platform-name">鸣潮官网</span>
+            <span class="platform-type">官方渠道</span>
+          </div>
+          <div class="platform-desc">版本公告、维护预告、预下载说明等一手信息源。3.2更新预告首发于此。</div>
+          <div class="heat-indicator"><span class="heat-dot high"></span><span class="heat-dot high"></span><span class="heat-dot high"></span> 权威性：最高</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#6366f1,#4f46e5);">S</div>
+            <span class="platform-name">Steam</span>
+            <span class="platform-type">PC 平台</span>
+          </div>
+          <div class="platform-desc">PC端玩家阵地。3.1版本在线峰值38121人，热销全球第三。版本更新评测讨论重要参考。</div>
+          <div class="heat-indicator"><span class="heat-dot mid"></span><span class="heat-dot mid"></span><span class="heat-dot mid"></span> 讨论热度：中等</div>
+        </div>
+        <div class="platform-card">
+          <div class="platform-card-header">
+            <div class="platform-icon" style="background:linear-gradient(135deg,#f09f24,#e68a00);">W</div>
+            <span class="platform-name">WeGame</span>
+            <span class="platform-type">PC 平台</span>
+          </div>
+          <div class="platform-desc">腾讯旗下PC游戏平台，国内PC玩家重要入口之一。3.0版本联动活动页持续运营中。</div>
+          <div class="heat-indicator"><span class="heat-dot mid"></span><span class="heat-dot mid"></span><span class="heat-dot low"></span> 讨论热度：中等</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 全部参考来源 ==================== -->
+    <section class="source-card">
+      <div class="card-head">
+        <h2>本期全部参考来源</h2>
+        <span class="small-badge">Sources</span>
+      </div>
+      <div class="source-grid">
+        <div class="source-item">
+          <div class="source-item-title">《鸣潮》3.2版本更新维护预告</div>
+          <div class="source-item-meta">平台：17173 / TapTap ｜ 类型：版本公告 ｜ 时间：2026-03-15</div>
+          <a href="https://news.17173.com/content/03152026/161347172.shtml" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">《鸣潮》3.2版本更新维护预告（TapTap官方）</div>
+          <div class="source-item-meta">平台：TapTap ｜ 类型：版本公告 ｜ 时间：2026-03-19</div>
+          <a href="https://www.taptap.cn/moment/781918010041435066" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">2月出海榜：《鸣潮》单日全球流水超600万美元</div>
+          <div class="source-item-meta">平台：腾讯新闻 / 游戏葡萄 ｜ 类型：市场数据 ｜ 时间：2026-03-09</div>
+          <a href="https://news.qq.com/rain/a/20260309A05COL00" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">《鸣潮》榜单第三名！已成为一款常青游戏</div>
+          <div class="source-item-meta">平台：17173 ｜ 类型：出海成绩分析 ｜ 时间：2026-03-13</div>
+          <a href="https://news.17173.com/content/03132026/180802606.shtml" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">《鸣潮》×《Muse Dash 喵斯快跑》特别合作即将开启</div>
+          <div class="source-item-meta">平台：17173 ｜ 类型：联动官宣 ｜ 时间：2026-03-14</div>
+          <a href="https://news.17173.com/content/03142026/100851210.shtml" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">鸣潮3.2版本全部优化内容一览</div>
+          <div class="source-item-meta">平台：17173 ｜ 类型：优化解读 ｜ 时间：2026-03-15</div>
+          <a href="https://news.17173.com/content/03152026/001002053.shtml" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">鸣潮3.2版本优化前瞻：移动端将迎超高画质</div>
+          <div class="source-item-meta">平台：搜狐游戏 ｜ 类型：优化前瞻 ｜ 时间：2026-03-15</div>
+          <a href="https://www.sohu.com/a/996602415_122598898" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">《鸣潮》3.3新角色达妮娅四视图 + 绯雪建模 + 莫宁皮肤</div>
+          <div class="source-item-meta">平台：17173 ｜ 类型：角色前瞻/建模曝光 ｜ 时间：2026-03-17</div>
+          <a href="https://news.17173.com/content/03172026/135335295.shtml" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">鸣潮3.2-3.4新角色确定：西格莉卡强度 + 绯雪三链质变</div>
+          <div class="source-item-meta">平台：17173 ｜ 类型：角色强度分析 ｜ 时间：2026-03-09</div>
+          <a href="https://news.17173.com/content/03092026/101027009.shtml" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">鸣潮3.3绯雪强度在线·霜渐效应持平卡提</div>
+          <div class="source-item-meta">平台：17173 ｜ 类型：角色理论分析 ｜ 时间：2026-03-10</div>
+          <a href="https://news.17173.com/content/03102026/231120403.shtml" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">周年庆角色自选复刻·莫宁3.3有新皮肤</div>
+          <div class="source-item-meta">平台：17173 ｜ 类型：周年庆预期 ｜ 时间：2026-03-02</div>
+          <a href="https://news.17173.com/content/03022026/003435710.shtml" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">三角洲毁号主播黄V消失！网友热议：大概率永封</div>
+          <div class="source-item-meta">平台：游民星空 ｜ 类型：社区舆情 ｜ 时间：2026-03-11</div>
+          <a href="https://www.gamersky.com/news/202603/2104068.shtml" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">"游戏出海"纳入国家十五五规划·出海常青榜发布</div>
+          <div class="source-item-meta">平台：搜狐 / 澎湃新闻 ｜ 类型：政策/行业 ｜ 时间：2026-03-16</div>
+          <a href="https://www.sohu.com/a/997324992_121984121" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">鸣潮3.3达妮娅CV阵容揭晓·声痕设计暗藏惊喜</div>
+          <div class="source-item-meta">平台：B站 ｜ 类型：角色前瞻 ｜ 时间：2026-03-17</div>
+          <a href="https://www.bilibili.com/video/BV1AEwRz2E4n/" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">3.3版本4月30日官宣·版本时间线汇总</div>
+          <div class="source-item-meta">平台：B站 ｜ 类型：版本规划 ｜ 时间：2026-03-13</div>
+          <a href="https://www.bilibili.com/video/BV13jwJzcEYX/" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+        <div class="source-item">
+          <div class="source-item-title">《2026年2月中国游戏出海常青榜》发布</div>
+          <div class="source-item-meta">平台：澎湃新闻 / 时代财经 ｜ 类型：行业榜单 ｜ 时间：2026-03-17</div>
+          <a href="https://www.thepaper.cn/newsDetail_forward_32749827" target="_blank" rel="noopener noreferrer">打开来源</a>
+        </div>
+      </div>
+      <div class="footer-note">
+        说明：本期内容优先采用近 7 天公开可检索来源；其中"社区热议/抽卡策略"类条目属于讨论趋势提炼，不等同于官方最终公告。
+        监测平台覆盖核心社区（B站、库街区、NGA、小红书、TapTap、贴吧）、资讯站（17173、游民星空、腾讯新闻、搜狐游戏、今日头条、好游快爆）、
+        短视频/内容平台（微博、抖音）以及PC/官方渠道（官网、Steam、WeGame）。
+      </div>
+    </section>
+  </div>
+</body>
+</html>

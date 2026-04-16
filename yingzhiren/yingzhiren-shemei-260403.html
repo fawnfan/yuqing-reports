@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《影之刃零》社媒舆情采集报告 | 2026.04.03</title>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --card-bg: #12121a;
+    --card-border: #1e1e2e;
+    --accent: #c9302c;
+    --accent-light: #e74c3c;
+    --gold: #f0c040;
+    --gold-dim: #b8941e;
+    --text: #e0e0e6;
+    --text-dim: #8888a0;
+    --green: #2ecc71;
+    --blue: #3498db;
+    --orange: #e67e22;
+    --purple: #9b59b6;
+    --cyan: #00d4aa;
+    --positive: #2ecc71;
+    --negative: #e74c3c;
+    --neutral: #8888a0;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 20px 60px; }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #1a0a0a 0%, #0f0a1a 50%, #0a1a1a 100%);
+    border: 1px solid var(--accent);
+    border-radius: 16px;
+    padding: 40px 36px;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--gold), var(--accent));
+  }
+  .header-top {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    flex-wrap: wrap; gap: 12px;
+  }
+  .header h1 {
+    font-size: 26px;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--accent-light), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+  }
+  .header .sub { color: var(--text-dim); font-size: 14px; margin-top: 6px; }
+  .header .sub span { color: var(--gold); font-weight: 700; }
+  .badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+  .badge {
+    display: inline-block;
+    padding: 3px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .badge-platform {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--text-dim);
+  }
+  .badge-method {
+    background: rgba(52,152,219,0.15);
+    border: 1px solid rgba(52,152,219,0.3);
+    color: var(--blue);
+  }
+
+  /* KPI */
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  @media (max-width: 900px) { .kpi-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 600px) { .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
+  .kpi-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 18px 14px;
+    text-align: center;
+    transition: border-color .2s, transform .2s;
+  }
+  .kpi-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .kpi-card .icon { font-size: 24px; margin-bottom: 6px; }
+  .kpi-card .kpi-label { font-size: 12px; color: var(--text-dim); margin-bottom: 4px; }
+  .kpi-card .kpi-value { font-size: 26px; font-weight: 800; color: var(--gold); }
+  .kpi-card .kpi-sub { font-size: 11px; color: var(--text-dim); margin-top: 2px; }
+
+  /* SECTIONS */
+  .section {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    padding: 28px 26px;
+    margin-bottom: 22px;
+  }
+  .section-title {
+    font-size: 18px; font-weight: 700;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--card-border);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-title .num {
+    background: var(--accent);
+    color: #fff;
+    font-size: 12px; font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    min-width: 24px; text-align: center;
+  }
+  .sub-title {
+    font-size: 15px; font-weight: 700;
+    color: var(--gold);
+    margin: 18px 0 10px;
+    padding-left: 10px;
+    border-left: 3px solid var(--gold);
+  }
+
+  /* SENTIMENT BARS */
+  .sentiment-overview {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  @media (max-width: 900px) { .sentiment-overview { grid-template-columns: repeat(3, 1fr); } }
+  .sent-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 14px 12px;
+    text-align: center;
+  }
+  .sent-card .name { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+  .sent-bar {
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 6px;
+  }
+  .sent-bar .pos { background: var(--positive); }
+  .sent-bar .neu { background: var(--neutral); }
+  .sent-bar .neg { background: var(--negative); }
+  .sent-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: var(--text-dim);
+  }
+  .sent-labels .p { color: var(--positive); }
+  .sent-labels .n { color: var(--negative); }
+
+  /* TABLE */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  .data-table th {
+    background: rgba(201,48,44,0.12);
+    color: var(--gold);
+    font-weight: 700;
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 2px solid var(--card-border);
+    white-space: nowrap;
+  }
+  .data-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: top;
+  }
+  .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .data-table .platform-tag {
+    display: inline-block;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #fff;
+  }
+  .tag-weibo { background: #e6162d; }
+  .tag-douyin { background: #000; border: 1px solid #333; }
+  .tag-xhs { background: #ff2442; }
+  .tag-nga { background: #6c8ebf; }
+  .tag-zhihu { background: #0066ff; }
+  .sent-pos { color: var(--positive); font-weight: 600; }
+  .sent-neg { color: var(--negative); font-weight: 600; }
+  .sent-neu { color: var(--neutral); }
+
+  /* TOPIC CARDS */
+  .topic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 700px) { .topic-grid { grid-template-columns: 1fr; } }
+  .topic-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 18px;
+    transition: border-color .2s;
+  }
+  .topic-card:hover { border-color: var(--gold-dim); }
+  .topic-card h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 8px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .topic-card p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .topic-card .heat {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-top: 8px;
+  }
+  .heat-high { background: rgba(231,76,60,0.15); color: var(--accent-light); border: 1px solid rgba(231,76,60,0.3); }
+  .heat-mid { background: rgba(230,126,34,0.15); color: var(--orange); border: 1px solid rgba(230,126,34,0.3); }
+  .heat-low { background: rgba(46,204,113,0.15); color: var(--green); border: 1px solid rgba(46,204,113,0.3); }
+
+  /* WORDCLOUD */
+  .wordcloud {
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+    padding: 20px 0;
+  }
+  .wordcloud span {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    transition: all .2s;
+    cursor: default;
+  }
+  .wordcloud span:hover { border-color: var(--gold-dim); background: rgba(240,192,64,0.08); }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    padding: 30px 0 10px;
+    color: var(--text-dim);
+    font-size: 12px;
+  }
+  .footer a { color: var(--gold-dim); text-decoration: none; }
+
+  /* HIGHLIGHT BOX */
+  .highlight-box {
+    background: linear-gradient(135deg, rgba(201,48,44,0.08), rgba(240,192,64,0.06));
+    border: 1px solid rgba(240,192,64,0.2);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 14px 0;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  .highlight-box strong { color: var(--gold); }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent), var(--gold), var(--accent));
+    border-radius: 2px;
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 18px;
+    padding: 12px 16px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -22px; top: 16px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+  }
+  .timeline-item .date { font-size: 11px; color: var(--text-dim); margin-bottom: 4px; }
+  .timeline-item .evt { font-size: 13px; }
+  .timeline-item .src { font-size: 11px; color: var(--text-dim); margin-top: 4px; }
+
+  .pill { display:inline-block; padding:2px 8px; border-radius:10px; font-size:11px; font-weight:600; }
+  .pill-hot { background:rgba(231,76,60,0.15); color:var(--accent-light); }
+  .pill-info { background:rgba(52,152,219,0.15); color:var(--blue); }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ========== HEADER ========== -->
+<div class="header">
+  <div class="header-top">
+    <div>
+      <h1>🗡️ 《影之刃零》社媒舆情采集报告</h1>
+      <div class="sub">采集时间：<span>2026年4月3日</span> &nbsp;|&nbsp; 覆盖周期：近30天内容 + 实时热点</div>
+      <div class="sub">数据来源：5大社媒平台实时抓取 &nbsp;|&nbsp; 作为双周报社媒板块的数据补充</div>
+      <div class="badge-row">
+        <span class="badge badge-platform">🔴 微博</span>
+        <span class="badge badge-platform">🎵 抖音</span>
+        <span class="badge badge-platform">📕 小红书</span>
+        <span class="badge badge-platform">🏛️ NGA</span>
+        <span class="badge badge-platform">🔵 知乎</span>
+        <span class="badge badge-method">🤖 CDP自动化采集</span>
+      </div>
+    </div>
+    <div style="text-align:right;">
+      <div style="background:linear-gradient(135deg,var(--accent),#8b0000);color:#fff;font-weight:800;font-size:20px;padding:10px 20px;border-radius:10px;box-shadow:0 4px 20px rgba(201,48,44,0.4);text-align:center;">
+        159天<small style="display:block;font-size:11px;font-weight:400;opacity:0.8;">距发售 9月9日</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== KPI OVERVIEW ========== -->
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="icon">🔴</div>
+    <div class="kpi-label">微博</div>
+    <div class="kpi-value">23</div>
+    <div class="kpi-sub">条搜索结果采集</div>
+  </div>
+  <div class="kpi-card">
+    <div class="icon">🎵</div>
+    <div class="kpi-label">抖音</div>
+    <div class="kpi-value">18</div>
+    <div class="kpi-sub">条视频内容采集</div>
+  </div>
+  <div class="kpi-card">
+    <div class="icon">📕</div>
+    <div class="kpi-label">小红书</div>
+    <div class="kpi-value">26</div>
+    <div class="kpi-sub">条笔记采集</div>
+  </div>
+  <div class="kpi-card">
+    <div class="icon">🏛️</div>
+    <div class="kpi-label">NGA</div>
+    <div class="kpi-value">21</div>
+    <div class="kpi-sub">条帖子采集</div>
+  </div>
+  <div class="kpi-card">
+    <div class="icon">🔵</div>
+    <div class="kpi-label">知乎</div>
+    <div class="kpi-value">5</div>
+    <div class="kpi-sub">个热门话题/问题</div>
+  </div>
+</div>
+
+<!-- ========== 1. EXECUTIVE SUMMARY ========== -->
+<div class="section">
+  <div class="section-title"><span class="num">1</span> 舆情总览</div>
+  
+  <div class="highlight-box">
+    <strong>📊 核心发现：</strong>本次采集覆盖微博/抖音/小红书/NGA/知乎5大平台，共计 <strong>93条</strong> 有效内容。整体舆情呈现 <strong>高度正面</strong> 态势：<br>
+    ① <strong>愿望单排行榜</strong> 成为最大热点 —— 4月2日"国游销量榜"公布Q2数据，《影之刃零》全球#23、国产榜首，微博刷屏式传播<br>
+    ② <strong>新华社连续跟踪报道</strong> + <strong>CGTN国际传播</strong>，主流官媒对游戏的关注持续升温<br>
+    ③ <strong>AWE海信联动试玩</strong> 话题在小红书/微博双平台形成口碑扩散<br>
+    ④ 与《漫威金刚狼》9月档期对撞成为核心讨论点，但整体以"期待"而非"担忧"为主调
+  </div>
+
+  <!-- Sentiment overview -->
+  <div class="sub-title">各平台情感分布（基于内容语义分析）</div>
+  <div class="sentiment-overview">
+    <div class="sent-card">
+      <div class="name">🔴 微博</div>
+      <div class="sent-bar">
+        <div class="pos" style="width:78%"></div>
+        <div class="neu" style="width:17%"></div>
+        <div class="neg" style="width:5%"></div>
+      </div>
+      <div class="sent-labels"><span class="p">正面 78%</span><span>中性 17%</span><span class="n">负面 5%</span></div>
+    </div>
+    <div class="sent-card">
+      <div class="name">🎵 抖音</div>
+      <div class="sent-bar">
+        <div class="pos" style="width:83%"></div>
+        <div class="neu" style="width:14%"></div>
+        <div class="neg" style="width:3%"></div>
+      </div>
+      <div class="sent-labels"><span class="p">正面 83%</span><span>中性 14%</span><span class="n">负面 3%</span></div>
+    </div>
+    <div class="sent-card">
+      <div class="name">📕 小红书</div>
+      <div class="sent-bar">
+        <div class="pos" style="width:85%"></div>
+        <div class="neu" style="width:12%"></div>
+        <div class="neg" style="width:3%"></div>
+      </div>
+      <div class="sent-labels"><span class="p">正面 85%</span><span>中性 12%</span><span class="n">负面 3%</span></div>
+    </div>
+    <div class="sent-card">
+      <div class="name">🏛️ NGA</div>
+      <div class="sent-bar">
+        <div class="pos" style="width:55%"></div>
+        <div class="neu" style="width:30%"></div>
+        <div class="neg" style="width:15%"></div>
+      </div>
+      <div class="sent-labels"><span class="p">正面 55%</span><span>中性 30%</span><span class="n">负面 15%</span></div>
+    </div>
+    <div class="sent-card">
+      <div class="name">🔵 知乎</div>
+      <div class="sent-bar">
+        <div class="pos" style="width:65%"></div>
+        <div class="neu" style="width:25%"></div>
+        <div class="neg" style="width:10%"></div>
+      </div>
+      <div class="sent-labels"><span class="p">正面 65%</span><span>中性 25%</span><span class="n">负面 10%</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 2. HOT TOPICS ========== -->
+<div class="section">
+  <div class="section-title"><span class="num">2</span> 热点话题聚类</div>
+  
+  <div class="topic-grid">
+    <div class="topic-card">
+      <h4>🏆 Q2愿望单排行榜刷屏</h4>
+      <p>4月2日"国游销量榜"公布2026年Q2国产游戏Steam愿望单排行，《影之刃零》以全球第23名、国产第1名占据绝对头部。微博上新浪游戏、游戏动力等10+媒体账号集中转发，形成"刷屏"级传播。用户评论以"果然大家都在等"、"国产之光"等积极语态为主。</p>
+      <span class="heat heat-high">🔥 热度：极高</span>
+    </div>
+    <div class="topic-card">
+      <h4>⚔️ 与《漫威金刚狼》档期对撞</h4>
+      <p>9月9日 vs 9月15日——仅差一周的发售日引发海内外玩家热议。微博UCG、杉果娘等媒体报道，NGA相关帖子获41条回复。舆论主基调并非"二选一"式对立，而是"9月打满两周"的期待情绪。</p>
+      <span class="heat heat-high">🔥 热度：极高</span>
+    </div>
+    <div class="topic-card">
+      <h4>📰 新华社/CGTN主流媒体关注</h4>
+      <p>新华社发布制作人梁其伟专访视频"武侠先锋的全球探索之路"，在B站、抖音（2.5万播放）双平台传播。CGTN以"东方美学成为世界玩家共同语言"专题报道，将影零与黑神话并列。官媒持续背书提升品牌公信力。</p>
+      <span class="heat heat-mid">🔥 热度：高</span>
+    </div>
+    <div class="topic-card">
+      <h4>🎮 AWE海信联动线下试玩</h4>
+      <p>海信电视×灵游坊在AWE展会举办试玩会（七星剑阵版本，30分钟沉浸体验），小红书出现多条试玩体验笔记（"影之刃零试玩"、"awe影之刃零再来啦"），反响积极。线下活动有效触达非核心玩家圈层。</p>
+      <span class="heat heat-mid">🔥 热度：高</span>
+    </div>
+    <div class="topic-card">
+      <h4>💻 英伟达DLSS 5首发支持</h4>
+      <p>GDC 2026期间，英伟达宣布DLSS 5（号称"游戏界GPT时刻"），国产游戏占首发支持列表半壁江山，影零名列其中。微博"手游娘"等科技+游戏博主报道，强化了"技术硬核"标签。</p>
+      <span class="heat heat-mid">🔥 热度：中高</span>
+    </div>
+    <div class="topic-card">
+      <h4>🎭 角色模型争议（已降温）</h4>
+      <p>NGA"影之刃零这个改模"帖获98条回复，为NGA最高互动量帖子。部分玩家对角色面部建模调整表达不满，但该话题时间集中在2025年12月，当前已明显降温。知乎"男主脸模"讨论也以正面居多。</p>
+      <span class="heat heat-low">热度：低（已降温）</span>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 3. PLATFORM DETAIL: WEIBO ========== -->
+<div class="section">
+  <div class="section-title"><span class="num">3</span> 各平台数据详情</div>
+  
+  <div class="sub-title">🔴 微博（23条 · 搜索关键词"影之刃零"）</div>
+  <div class="highlight-box">
+    <strong>微博特征：</strong>4月2日愿望单排行榜形成集中爆发，23条结果中有 <strong>10条</strong> 与Q2愿望单排行直接相关（占比43%）。媒体矩阵（新浪游戏、游民星空、杉果娘、UCG等）主导传播，KOL二创和Cosplay内容也有稳定声量。
+  </div>
+  <table class="data-table">
+    <thead>
+      <tr><th>#</th><th>作者</th><th>内容摘要</th><th>时间</th><th>转·评·赞</th><th>情感</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>新浪游戏</td><td>国游销量榜Q2国产游戏愿望单排行，前3名：影之刃零(#23)、湮灭之潮(#35)、烽火与炊烟(#47)</td><td>04-02</td><td>0·2·4</td><td class="sent-pos">正面</td></tr>
+      <tr><td>2</td><td>Deniece-Wong</td><td>影之刃零15天破百万愿望单，海外占比超50%，9月9日登陆PS5及PC</td><td>04-02</td><td>2·1·6</td><td class="sent-pos">正面</td></tr>
+      <tr><td>3</td><td>今天玩PS5了吗</td><td>国游销量榜Q2愿望单排行</td><td>04-02</td><td>2·6·11</td><td class="sent-pos">正面</td></tr>
+      <tr><td>4</td><td>达克鸭唐</td><td>影之刃零女主角很好看，到时候必须支持！</td><td>2025-12-14</td><td>29·95·641</td><td class="sent-pos">正面</td></tr>
+      <tr><td>5</td><td>战斧Cosplay</td><td>TGA定档庆祝！抽奖送主角武器【黑伤】</td><td>2025-12-12</td><td>579·132·192</td><td class="sent-pos">正面</td></tr>
+      <tr><td>6</td><td>CGTN</td><td>当东方美学成为世界玩家共同语言——独家探访影零创作幕后</td><td>03-24</td><td>4·1·12</td><td class="sent-pos">正面</td></tr>
+      <tr><td>7</td><td>手游娘</td><td>DLSS 5发布，国产游戏占半壁江山，影零首发支持</td><td>03-17</td><td>9·9·13</td><td class="sent-pos">正面</td></tr>
+      <tr><td>8</td><td>游民星空</td><td>海信×灵游坊AWE试玩会，七星剑阵版本30分钟沉浸体验</td><td>03-10</td><td>4·8·29</td><td class="sent-pos">正面</td></tr>
+      <tr><td>9</td><td>游侠网</td><td>新华社公开对影零开发团队采访视频</td><td>02-27</td><td>5·2·15</td><td class="sent-pos">正面</td></tr>
+      <tr><td>10</td><td>杉果娘Sonkwo</td><td>漫威金刚狼与影零发售日仅差一周，引海外玩家热议</td><td>02-26</td><td>4·7·7</td><td class="sent-neu">中性</td></tr>
+      <tr><td>11</td><td>六晓</td><td>影之刃零主角：魂 Cosplay</td><td>03-26</td><td>2·7·63</td><td class="sent-pos">正面</td></tr>
+      <tr><td>12</td><td>游戏动力摸鱼酱</td><td>"大家都在等影之刃零，怎么还有五个月啊"</td><td>04-02</td><td>0·0·3</td><td class="sent-pos">正面</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:12px;color:var(--text-dim);margin-top:8px;">* 展示互动量Top12，完整23条数据见原始JSON</p>
+
+  <!-- DOUYIN -->
+  <div class="sub-title">🎵 抖音（18条视频 · 搜索关键词"影之刃零"）</div>
+  <div class="highlight-box">
+    <strong>抖音特征：</strong>官方账号@影之刃零 贡献头部流量（TGA定档PV 23万播放），新华社专访视频2.5万播放。IGN中国贡献3条高质量实机演示内容。抖音相关搜索词：<span class="pill pill-info">影之刃零发售时间</span> <span class="pill pill-info">影之刃零ps独占吗</span> <span class="pill pill-info">影之刃零老外反应</span>
+  </div>
+  <table class="data-table">
+    <thead>
+      <tr><th>#</th><th>作者</th><th>标题</th><th>时长</th><th>播放量</th><th>日期</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>@影之刃零</td><td>斩断情仇之刃！定档PV</td><td>04:01</td><td>23.0万</td><td>2025-12-12</td></tr>
+      <tr><td>2</td><td>@影之刃零</td><td>双蛇大破七星阵！蛇年贺岁实机</td><td>05:58</td><td>4.9万</td><td>2025-01-22</td></tr>
+      <tr><td>3</td><td>@秋雨雨雨</td><td>影零动作设计，处决动作像极武侠小说</td><td>00:33</td><td>4.5万</td><td>2025-07-29</td></tr>
+      <tr><td>4</td><td>@IGN中国</td><td>试玩会Demo 22分钟实机演示</td><td>22:26</td><td>4.5万</td><td>2025-07-26</td></tr>
+      <tr><td>5</td><td>@女流66</td><td>有盼头了各位！</td><td>04:22</td><td>2.6万</td><td>2025-12-12</td></tr>
+      <tr><td>6</td><td>@新华社</td><td>武侠先锋《影之刃零》的全球探索之路</td><td>18:26</td><td>2.5万</td><td>02-27</td></tr>
+      <tr><td>7</td><td>@IGN中国</td><td>试玩Demo全武器招式演示</td><td>10:26</td><td>2.5万</td><td>2025-08-22</td></tr>
+      <tr><td>8</td><td>@TianZhe</td><td>国产武侠走向世界</td><td>00:49</td><td>2.0万</td><td>03-19</td></tr>
+      <tr><td>9</td><td>@ETGO游戏前哨站</td><td>影零在海外杀疯了！海外预约超50%</td><td>06:29</td><td>1.5万</td><td>02-28</td></tr>
+      <tr><td>10</td><td>@空罐少年QVQ</td><td>影零战斗惹争议？会改吗？深度如何？</td><td>10:02</td><td>2819</td><td>03-24</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:12px;color:var(--text-dim);margin-top:8px;">* 展示播放量Top10，完整18条数据见原始JSON</p>
+
+  <!-- XHS -->
+  <div class="sub-title">📕 小红书（26条笔记 · 搜索关键词"影之刃零"）</div>
+  <div class="highlight-box">
+    <strong>小红书特征：</strong>官方账号@影之刃零 发布的视频笔记获最高互动（2718/2341/1056赞）。AWE线下试玩会催生多条体验分享笔记。用户"继黑神话之后最期待的国产大作"获965赞，代表泛用户群体的高期待情绪。内容以 <strong>种草/安利向</strong> 为主。
+  </div>
+  <table class="data-table">
+    <thead>
+      <tr><th>#</th><th>作者</th><th>标题</th><th>点赞</th><th>日期</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>影之刃零（官方）</td><td>斩断情仇之刃！定档</td><td>2,718</td><td>2025-12-12</td></tr>
+      <tr><td>2</td><td>影之刃零（官方）</td><td>视频笔记</td><td>2,341</td><td>2025-12-17</td></tr>
+      <tr><td>3</td><td>影之刃零（官方）</td><td>视频笔记</td><td>1,056</td><td>01-23</td></tr>
+      <tr><td>4</td><td>初三</td><td>继黑神话之后，最期待的国产大作！</td><td>965</td><td>2025-12-12</td></tr>
+      <tr><td>5</td><td>卡比的游戏速报</td><td>影之刃零将于2026年9月9日发售！</td><td>513</td><td>2025-12-12</td></tr>
+      <tr><td>6</td><td>火星时代3D建模</td><td>影之刃零定档！暗黑武侠美学惊艳</td><td>300</td><td>2025-12-16</td></tr>
+      <tr><td>7</td><td>罗尼</td><td>TGA公布预告，据说定档2026？</td><td>125</td><td>2025-12-12</td></tr>
+      <tr><td>8</td><td>及時乐</td><td>远坂凛和士郎过家家（含影零内容）</td><td>119</td><td>1天前</td></tr>
+      <tr><td>9</td><td>Yu.rain</td><td>2026年已经狠狠期待住了！</td><td>58</td><td>2025-12-22</td></tr>
+      <tr><td>10</td><td>爱玩游戏的菲菲</td><td>影之刃零定档了！明年必玩的游戏！</td><td>50</td><td>2025-12-12</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:12px;color:var(--text-dim);margin-top:8px;">* 展示点赞Top10，完整26条数据见原始JSON</p>
+
+  <!-- NGA -->
+  <div class="sub-title">🏛️ NGA（21条帖子 · 搜索关键词"影之刃零"）</div>
+  <div class="highlight-box">
+    <strong>NGA特征：</strong>核心硬核玩家社区，讨论深度最高。愿望单活动帖(138回复)、改模争议帖(98回复)、PS独占讨论(45回复)为最高互动帖子。相比其他平台，NGA负面/争议内容占比较高（约15%），主要集中在"改模"和"不是开放世界"等设计分歧上。
+  </div>
+  <table class="data-table">
+    <thead>
+      <tr><th>#</th><th>标题</th><th>回复</th><th>时间</th><th>情感</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>[愿望单活动] 影之刃零</td><td>138</td><td>2025-12-22</td><td class="sent-pos">正面</td></tr>
+      <tr><td>2</td><td>影之刃零这个改模，emm……</td><td>98</td><td>2025-12-13</td><td class="sent-neg">争议</td></tr>
+      <tr><td>3</td><td>影之刃零可能在主机领域PS独占一年</td><td>45</td><td>2025-12-16</td><td class="sent-neu">中性</td></tr>
+      <tr><td>4</td><td>怎么感觉大伙对影之刃武侠游戏的剧情也有不该有的期待</td><td>44</td><td>03-08</td><td class="sent-neu">中性</td></tr>
+      <tr><td>5</td><td>漫威金刚狼与影零发售日仅差一周</td><td>41</td><td>03-12</td><td class="sent-neu">中性</td></tr>
+      <tr><td>6</td><td>梁其伟深度访谈：发售日为何定在9.9，且很难跳票</td><td>38</td><td>01-18</td><td class="sent-pos">正面</td></tr>
+      <tr><td>7</td><td>外网TGA预告播放量，影零断层领先</td><td>33</td><td>2025-12-14</td><td class="sent-pos">正面</td></tr>
+      <tr><td>8</td><td>15天破百万！100万愿望单达成！海外超五成</td><td>26</td><td>01-05</td><td class="sent-pos">正面</td></tr>
+      <tr><td>9</td><td>梁博取消马年春节播片："游戏品质最重要"</td><td>11</td><td>01-23</td><td class="sent-pos">正面</td></tr>
+      <tr><td>10</td><td>虽然影之刃零看起来质量是不错</td><td>10</td><td>01-03</td><td class="sent-neu">中性</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ZHIHU -->
+  <div class="sub-title">🔵 知乎（5个独立话题/问题）</div>
+  <div class="highlight-box">
+    <strong>知乎特征：</strong>话题集中度极高，去重后仅5个独立问题。高赞回答以正面评价为主，"如何评价国产动作游戏《影之刃零》"获47条评论，"冯骥盛赞影零实机"获33条评论。知乎讨论的深度和理性程度最高，适合观测核心向玩家和行业人士的态度。
+  </div>
+  <table class="data-table">
+    <thead>
+      <tr><th>#</th><th>话题/问题</th><th>高赞摘要</th><th>评论数</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>如何评价国产动作游戏《影之刃零》？</td><td>"就凭男主这脸模，我就玩定了"——代表期待派</td><td>47</td></tr>
+      <tr><td>2</td><td>冯骥朋友圈盛赞《影之刃零》实机内容</td><td>"灵游坊已停掉所有其他项目，全力投入影零"</td><td>33</td></tr>
+      <tr><td>3</td><td>影之刃零（话题页）</td><td>话题聚合页，11条内容汇总</td><td>11</td></tr>
+      <tr><td>4</td><td>如何评价UP主智能路障"影零是刺穿行业的利剑"视频？</td><td>UP主评测视频引发讨论</td><td>-</td></tr>
+      <tr><td>5</td><td>《明末：渊虚之羽》vs《影之刃零》哪个更可能成爆款？</td><td>"我拿什么跟干了几十年的小日子比"</td><td>4</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ========== 4. KEYWORD CLOUD ========== -->
+<div class="section">
+  <div class="section-title"><span class="num">4</span> 高频关键词云</div>
+  <div class="wordcloud">
+    <span style="font-size:24px;color:var(--gold);font-weight:800;">愿望单</span>
+    <span style="font-size:22px;color:var(--accent-light);font-weight:700;">9月9日</span>
+    <span style="font-size:20px;color:var(--gold);font-weight:700;">定档</span>
+    <span style="font-size:20px;color:var(--blue);font-weight:700;">国产游戏</span>
+    <span style="font-size:18px;color:var(--green);font-weight:600;">新华社</span>
+    <span style="font-size:18px;color:var(--purple);font-weight:600;">漫威金刚狼</span>
+    <span style="font-size:17px;color:var(--orange);font-weight:600;">梁其伟</span>
+    <span style="font-size:17px;color:var(--cyan);font-weight:600;">海外玩家</span>
+    <span style="font-size:16px;color:var(--accent-light);">武侠</span>
+    <span style="font-size:16px;color:var(--blue);">PS5</span>
+    <span style="font-size:15px;color:var(--green);">DLSS 5</span>
+    <span style="font-size:15px;color:var(--gold-dim);">AWE试玩</span>
+    <span style="font-size:15px;color:var(--purple);">海信联动</span>
+    <span style="font-size:14px;color:var(--text-dim);">IGN</span>
+    <span style="font-size:14px;color:var(--text-dim);">黑神话</span>
+    <span style="font-size:14px;color:var(--orange);">Cosplay</span>
+    <span style="font-size:13px;color:var(--text-dim);">东方美学</span>
+    <span style="font-size:13px;color:var(--cyan);">100万</span>
+    <span style="font-size:13px;color:var(--text-dim);">Steam</span>
+    <span style="font-size:13px;color:var(--text-dim);">灵游坊</span>
+    <span style="font-size:12px;color:var(--text-dim);">独占</span>
+    <span style="font-size:12px;color:var(--text-dim);">冯骥</span>
+    <span style="font-size:12px;color:var(--text-dim);">改模</span>
+    <span style="font-size:12px;color:var(--text-dim);">处决动作</span>
+    <span style="font-size:12px;color:var(--text-dim);">堡垒之夜联动</span>
+  </div>
+</div>
+
+<!-- ========== 5. TIMELINE ========== -->
+<div class="section">
+  <div class="section-title"><span class="num">5</span> 近期传播时间线</div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="date">2026年4月2日</div>
+      <div class="evt"><strong>🏆 Q2愿望单排行榜爆发</strong> —— "国游销量榜"公布数据，影零全球#23国产#1，微博10+媒体集中刷屏</div>
+      <div class="src">微博 · 多平台转载</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026年3月24日</div>
+      <div class="evt"><strong>📺 CGTN国际报道</strong> —— "当东方美学成为世界玩家的共同语言"专题，独家探访影零创作幕后</div>
+      <div class="src">微博 · CGTN</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026年3月24日</div>
+      <div class="evt"><strong>💬 战斗系统争议讨论</strong> —— 抖音UP主"空罐少年"发布"影零战斗惹争议？会改吗？"讨论视频</div>
+      <div class="src">抖音 · 2,819播放</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026年3月10-15日</div>
+      <div class="evt"><strong>🎮 AWE海信联动试玩会</strong> —— 七星剑阵版本30分钟沉浸式体验，小红书多条试玩分享</div>
+      <div class="src">微博/小红书 · 海信电视</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026年3月17日</div>
+      <div class="evt"><strong>💻 DLSS 5首发支持公布</strong> —— 英伟达GDC发布，国产游戏占半壁江山，影零入列</div>
+      <div class="src">微博 · 手游娘</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026年2月27日</div>
+      <div class="evt"><strong>📰 新华社专访视频发布</strong> —— "武侠先锋的全球探索之路"，B站/抖音双平台2.5万播放</div>
+      <div class="src">微博/抖音/NGA · 新华社</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026年2月26日</div>
+      <div class="evt"><strong>⚔️ 金刚狼档期对撞曝光</strong> —— 漫威金刚狼9.15 vs 影零9.9，仅差一周引发热议</div>
+      <div class="src">微博/NGA · 杉果娘/UCG</div>
+    </div>
+    <div class="timeline-item">
+      <div class="date">2026年1月23日</div>
+      <div class="evt"><strong>🎬 取消春节播片</strong> —— 梁其伟宣布"游戏品质最重要"，将度过平静春节</div>
+      <div class="src">NGA · 9-11条回复</div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== 6. RISK & SUGGESTIONS ========== -->
+<div class="section">
+  <div class="section-title"><span class="num">6</span> 风险提示与运营建议</div>
+  
+  <div class="topic-grid">
+    <div class="topic-card">
+      <h4>⚠️ 风险点：档期竞争</h4>
+      <p>与《漫威金刚狼》（9.15）仅差一周，两者均为动作品类重磅作品。当前舆论以"双赢"论调为主，但需持续监测9月临近时的"二选一"舆论走向。建议提前准备差异化传播策略（东方武侠 vs 西方超英）。</p>
+    </div>
+    <div class="topic-card">
+      <h4>⚠️ 风险点：改模争议残留</h4>
+      <p>NGA改模帖虽已降温（2025年12月话题），但98条回复显示争议基数不小。建议在后续物料发布时关注角色模型相关评论，必要时通过官方回应或新物料转移注意力。</p>
+    </div>
+    <div class="topic-card">
+      <h4>✅ 建议：加码小红书种草</h4>
+      <p>小红书内容正面率最高（85%），"继黑神话之后最期待的国产大作"等UGC自然流量表现优异。建议考虑投放KOC体验笔记或发起话题挑战，扩大非核心圈层触达。</p>
+    </div>
+    <div class="topic-card">
+      <h4>✅ 建议：保持新华社/官媒节奏</h4>
+      <p>新华社年度跟踪报道+CGTN国际传播形成强背书链路。建议在发售前关键节点（E3、TGS、发售前一月）继续对接主流媒体专访/报道，维持品牌高度。</p>
+    </div>
+  </div>
+</div>
+
+<!-- ========== FOOTER ========== -->
+<div class="footer">
+  <p>《影之刃零》社媒舆情采集报告 · 2026年4月3日 · 数据来源：微博/抖音/小红书/NGA/知乎实时CDP自动化抓取</p>
+  <p style="margin-top:4px;">WeGame联运发行团队 · 内部参考 · 请勿外传</p>
+</div>
+
+</div>
+</body>
+</html>
